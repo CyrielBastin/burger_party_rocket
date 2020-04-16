@@ -20,3 +20,16 @@ pub struct Boisson
     quantite: u8
 }
 mod boisson;
+
+pub struct Burger
+{
+    id: u8,
+    nom: String,
+    description: String,
+    prix: f32,
+    recette: String,
+    image: String,
+    quantite: u8,
+    ingredients: Vec<Ingredient>
+}
+mod burger;
