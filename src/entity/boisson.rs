@@ -9,8 +9,8 @@ impl Boisson
             nom: "".to_string(),
             description: "".to_string(),
             prix: 0.0,
-            calories: u16,
-            image: "".into_string(),
+            calories: 0,
+            image: "".to_string(),
             quantite: 0
         }
     }

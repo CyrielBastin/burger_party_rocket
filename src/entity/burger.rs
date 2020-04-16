@@ -1,5 +1,4 @@
-use super::Burger;
-use crate::entity::Ingredient;
+use super::{Burger, Ingredient};
 
 impl Burger
 {
@@ -11,7 +10,7 @@ impl Burger
             description: "".to_string(),
             prix: 0.0,
             recette: "".to_string(),
-            image: "".into_string(),
+            image: "".to_string(),
             quantite: 0,
             ingredients: Vec::new()
         }

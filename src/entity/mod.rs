@@ -33,3 +33,14 @@ pub struct Burger
     ingredients: Vec<Ingredient>
 }
 mod burger;
+
+pub struct Commande
+{
+    id: u32,
+    terminal: u8,
+    heure_complete: String,
+    paye: bool,
+    burgers: Vec<Burger>,
+    boissons: Vec<Boisson>
+}
+mod commande;
