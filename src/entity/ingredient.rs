@@ -1,4 +1,5 @@
 use super::Ingredient;
+use std::fmt::{Display, Formatter, Result};
 
 impl Ingredient
 {
@@ -54,5 +55,16 @@ impl Ingredient
     }
     pub fn set_image(&mut self, image: &str) {
         self.image = image.to_string();
+    }
+}
+
+impl Display for Ingredient
+{
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result
+    {
+        write!(f, "Ingredient {{\n\tid: {},\n\tnom: {},\n\tdescription: {},\n\t\
+                prix: {},\n\tcalories: {},\n\timage: {}\n}}",
+        self.get_id(), self.get_nom(), self.get_description(), self.get_prix(),
+        self.get_calories(), self.get_image())
     }
 }

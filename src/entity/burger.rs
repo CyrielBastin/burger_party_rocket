@@ -1,4 +1,5 @@
 use super::{Burger, Ingredient};
+use std::fmt::{Display, Formatter, Result};
 
 impl Burger
 {
@@ -70,5 +71,16 @@ impl Burger
     }
     pub fn set_ingredients(&mut self, ingredients: Vec<Ingredient>) {
         self.ingredients = ingredients;
+    }
+}
+
+impl Display for Burger
+{
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result
+    {
+        write!(f, "Burger {{\n\tid: {},\n\tnom: {},\n\tdescription: {},\n\t\
+                prix: {},\n\trecette: {},\n\timage: {},\n\tquantite: {}\n}}",
+               self.get_id(), self.get_nom(), self.get_description(), self.get_prix(),
+               self.get_recette(), self.get_image(), self.get_quantite())
     }
 }

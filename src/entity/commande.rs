@@ -1,4 +1,5 @@
 use super::{Commande, Burger, Boisson};
+use std::fmt::{Display, Formatter, Result};
 
 impl Commande
 {
@@ -54,5 +55,15 @@ impl Commande
     }
     pub fn set_boissons(&mut self, boissons: Vec<Boisson>) {
         self.boissons = boissons;
+    }
+}
+
+impl Display for Commande
+{
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result
+    {
+        write!(f, "Commande {{\n\tid: {},\n\tterminal: {},\n\theure: {},\n\t\
+                paye: {}\n}}",
+               self.get_id(), self.get_terminal(), self.get_heure(), self.get_paye())
     }
 }

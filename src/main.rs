@@ -1,5 +1,7 @@
 mod entity;
+use entity::Commande;
 
-fn main() {
+fn main()
+{
     println!("Hello, world!");
 }
