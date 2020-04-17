@@ -16,10 +16,10 @@ impl Boisson
         }
     }
 
-    pub fn get_id(&self) -> u8 {
+    pub fn get_id(&self) -> u32 {
         self.id
     }
-    pub fn set_id(&mut self, id: u8) {
+    pub fn set_id(&mut self, id: u32) {
         self.id = id;
     }
 

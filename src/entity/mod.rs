@@ -1,6 +1,6 @@
 pub struct Ingredient
 {
-    id: u8,
+    id: u32,
     nom: String,
     description: String,
     prix: f32,
@@ -11,7 +11,7 @@ mod ingredient;
 
 pub struct Boisson
 {
-    id: u8,
+    id: u32,
     nom: String,
     description: String,
     prix: f32,
@@ -23,7 +23,7 @@ mod boisson;
 
 pub struct Burger
 {
-    id: u8,
+    id: u32,
     nom: String,
     description: String,
     prix: f32,
