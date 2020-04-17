@@ -68,3 +68,16 @@ impl Display for Ingredient
         self.get_calories(), self.get_image())
     }
 }
+
+impl Ingredient
+{
+    pub fn feed_from_db(&mut self, datas: (u8, String, String, f32, u16, u8, u8, String))
+    {
+        self.set_id(datas.0);
+        self.set_nom(&datas.1[..]);
+        self.set_description(&datas.2[..]);
+        self.set_prix(datas.3);
+        self.set_calories(datas.4);
+        self.set_image(&datas.7[..]);
+    }
+}

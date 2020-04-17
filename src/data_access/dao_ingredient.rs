@@ -1,5 +1,7 @@
 use crate::data_access::{DAO, DAOIngredient};
 use crate::entity::Ingredient;
+use mysql::{Row, from_row};
+use mysql::prelude::Queryable;
 
 impl DAO<Ingredient> for DAOIngredient
 {
@@ -17,11 +19,27 @@ impl DAO<Ingredient> for DAOIngredient
 
     fn find_by_id(&mut self, id: u32) -> Ingredient
     {
-        unimplemented!()
+        let query = "SELECT * FROM `ingredient` WHERE `id` = ?";
+        let result: Row = self.conn.exec_first(query, (id,)).unwrap().unwrap();
+        let datas = from_row::<(u8, String, String, f32, u16, u8, u8, String)>(result);
+        let mut ingredient = Ingredient::new();
+        ingredient.feed_from_db(datas);
+
+        ingredient
     }
 
     fn find_all(&mut self) -> Vec<Ingredient>
     {
-        unimplemented!()
+        let query = "SELECT * FROM `ingredient`";
+        let result: Vec<Row> = self.conn.exec(query, ()).unwrap();
+        let mut list_ingredients = Vec::new();
+        for row in result {
+            let datas = from_row::<(u8, String, String, f32, u16, u8, u8, String)>(row);
+            let mut ingredient = Ingredient::new();
+            ingredient.feed_from_db(datas);
+            list_ingredients.push(ingredient);
+        }
+
+        list_ingredients
     }
 }
