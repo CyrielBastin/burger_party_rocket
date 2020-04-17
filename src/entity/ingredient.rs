@@ -69,15 +69,37 @@ impl Display for Ingredient
     }
 }
 
+
+type DataFromDb = (Option<u8>, Option<String>, Option<String>, Option<f32>,
+                   Option<u16>, Option<u8>, Option<u8>, Option<String>);
+
 impl Ingredient
 {
-    pub fn feed_from_db(&mut self, datas: (u8, String, String, f32, u16, u8, u8, String))
+    pub fn feed_from_db(&mut self, datas: DataFromDb)
     {
-        self.set_id(datas.0);
-        self.set_nom(&datas.1[..]);
-        self.set_description(&datas.2[..]);
-        self.set_prix(datas.3);
-        self.set_calories(datas.4);
-        self.set_image(&datas.7[..]);
+        self.set_id(match datas.0 {
+            Some(x) => x,
+            None => 0
+        });
+        self.set_nom(match &datas.1 {
+            Some(x) => x,
+            None => ""
+        });
+        self.set_description(match &datas.2 {
+            Some(x) => x,
+            None => ""
+        });
+        self.set_prix(match datas.3 {
+            Some(x) => x,
+            None => 0.0
+        });
+        self.set_calories(match datas.4 {
+            Some(x) => x,
+            None => 0
+        });
+        self.set_image(match &datas.7 {
+            Some(x) => x,
+            None => ""
+        });
     }
 }

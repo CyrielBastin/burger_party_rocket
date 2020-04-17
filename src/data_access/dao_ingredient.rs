@@ -3,6 +3,9 @@ use crate::entity::Ingredient;
 use mysql::{Row, from_row};
 use mysql::prelude::Queryable;
 
+type DataFromDb = (Option<u8>, Option<String>, Option<String>, Option<f32>,
+                   Option<u16>, Option<u8>, Option<u8>, Option<String>);
+
 impl DAO<Ingredient> for DAOIngredient
 {
     fn create(&self, _obj: Ingredient) -> bool {
@@ -21,7 +24,7 @@ impl DAO<Ingredient> for DAOIngredient
     {
         let query = "SELECT * FROM `ingredient` WHERE `id` = ?";
         let result: Row = self.conn.exec_first(query, (id,)).unwrap().unwrap();
-        let datas = from_row::<(u8, String, String, f32, u16, u8, u8, String)>(result);
+        let datas = from_row::<DataFromDb>(result);
         let mut ingredient = Ingredient::new();
         ingredient.feed_from_db(datas);
 
@@ -34,7 +37,7 @@ impl DAO<Ingredient> for DAOIngredient
         let result: Vec<Row> = self.conn.exec(query, ()).unwrap();
         let mut list_ingredients = Vec::new();
         for row in result {
-            let datas = from_row::<(u8, String, String, f32, u16, u8, u8, String)>(row);
+            let datas = from_row::<DataFromDb>(row);
             let mut ingredient = Ingredient::new();
             ingredient.feed_from_db(datas);
             list_ingredients.push(ingredient);
