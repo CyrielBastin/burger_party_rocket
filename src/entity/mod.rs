@@ -1,3 +1,4 @@
+#[derive(Debug)]
 pub struct Ingredient
 {
     id: u32,
@@ -10,6 +11,7 @@ pub struct Ingredient
 }
 mod ingredient;
 
+#[derive(Debug)]
 pub struct Boisson
 {
     id: u32,
@@ -22,6 +24,7 @@ pub struct Boisson
 }
 mod boisson;
 
+#[derive(Debug)]
 pub struct Burger
 {
     id: u32,
@@ -35,6 +38,7 @@ pub struct Burger
 }
 mod burger;
 
+#[derive(Debug)]
 pub struct Commande
 {
     id: u32,

@@ -30,6 +30,7 @@ impl DAO<Burger> for DAOBurger
         let datas = from_row::<DataFromDb>(result);
         let mut burger = Burger::new();
         burger.feed_from_db(datas);
+        burger.set_ingredients(fetch_ingredients(self, id));
 
         burger
     }
@@ -40,25 +41,27 @@ impl DAO<Burger> for DAOBurger
     }
 }
 
-impl DAOBurger
+pub fn fetch_ingredients(dao: &mut DAOBurger, burger_id: u32) -> Vec<Ingredient>
 {
-    pub fn fetch_ingredients(&mut self, burger_id: u32) -> Vec<Ingredient>
-    {
-        let query =
-        "SELECT ingredient.*, burger_ingredient.quantite \
-        FROM `burger_ingredient` INNER JOIN `ingredient` \
-	        ON burger_ingredient.ingredient_id = ingredient.id \
-        WHERE burger_ingredient.burger_id = ?";
-        let result: Vec<Row> = self.conn.exec(query, (burger_id,)).unwrap();
-        let mut list_ingredients = Vec::new();
-        for row in result
-        {
-            let datas = from_row::<IngrFromDb>(row);
-            let mut ingredient = Ingredient::new();
-            ingredient.feed_from_db(datas);
-            list_ingredients.push(ingredient);
-        }
+    let query =
+    "SELECT ingredient.*, burger_ingredient.quantite \
+    FROM `burger_ingredient` INNER JOIN `ingredient` \
+        ON burger_ingredient.ingredient_id = ingredient.id \
+    WHERE burger_ingredient.burger_id = ?";
+    let result: Vec<Row> = dao.conn.exec(query, (burger_id,)).unwrap();
+    let mut list_ingredients = Vec::new();
+    push_row_to_vec_ingr(result, &mut list_ingredients);
 
-        list_ingredients
+    list_ingredients
+}
+
+fn push_row_to_vec_ingr(result: Vec<Row>, list_ingr: &mut Vec<Ingredient>)
+{
+    for row in result
+    {
+        let datas = from_row::<IngrFromDb>(row);
+        let mut ingredient = Ingredient::new();
+        ingredient.feed_from_db(datas);
+        list_ingr.push(ingredient);
     }
 }
