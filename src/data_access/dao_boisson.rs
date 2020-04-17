@@ -3,7 +3,7 @@ use crate::entity::Boisson;
 use mysql::{Row, from_row};
 use mysql::prelude::Queryable;
 
-type DataFromDb = (Option<u8>, Option<String>, Option<f32>, Option<String>,
+type DataFromDb = (Option<u32>, Option<String>, Option<f32>, Option<String>,
                    Option<u16>, Option<u8>, Option<u8>, Option<String>);
 
 impl DAO<Boisson> for DAOBoisson
@@ -22,16 +22,27 @@ impl DAO<Boisson> for DAOBoisson
 
     fn find_by_id(&mut self, id: u32) -> Boisson
     {
-        let query = "SELECT * FROM `ingredient` WHERE `id` = ?";
+        let query = "SELECT * FROM `boisson` WHERE `id` = ?";
         let result: Row = self.conn.exec_first(query, (id,)).unwrap().unwrap();
         let datas = from_row::<DataFromDb>(result);
-        let mut ingredient = Ingredient::new();
-        ingredient.feed_from_db(datas);
+        let mut boisson = Boisson::new();
+        boisson.feed_from_db(datas);
 
-        ingredient
+        boisson
     }
 
     fn find_all(&mut self) -> Vec<Boisson>
     {
+        let query = "SELECT * FROM `boisson`";
+        let result: Vec<Row> = self.conn.exec(query, ()).unwrap();
+        let mut list_boissons = Vec::new();
+        for row in result {
+            let datas = from_row::<DataFromDb>(row);
+            let mut boisson = Boisson::new();
+            boisson.feed_from_db(datas);
+            list_boissons.push(boisson);
+        }
+
+        list_boissons
     }
 }

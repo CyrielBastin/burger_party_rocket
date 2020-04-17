@@ -3,7 +3,7 @@ use crate::entity::Ingredient;
 use mysql::{Row, from_row};
 use mysql::prelude::Queryable;
 
-type DataFromDb = (Option<u8>, Option<String>, Option<String>, Option<f32>,
+type DataFromDb = (Option<u32>, Option<String>, Option<String>, Option<f32>,
                    Option<u16>, Option<u8>, Option<u8>, Option<String>);
 
 impl DAO<Ingredient> for DAOIngredient
