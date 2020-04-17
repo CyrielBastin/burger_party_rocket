@@ -22,7 +22,7 @@ impl DAO<Ingredient> for DAOIngredient
 
     fn find_by_id(&mut self, id: u32) -> Ingredient
     {
-        let query = "SELECT * FROM `ingredient` WHERE `id` = ?";
+        let query = "SELECT *, 0 AS quantite FROM `ingredient` WHERE `id` = ?";
         let result: Row = self.conn.exec_first(query, (id,)).unwrap().unwrap();
         let datas = from_row::<DataFromDb>(result);
         let mut ingredient = Ingredient::new();
@@ -33,7 +33,7 @@ impl DAO<Ingredient> for DAOIngredient
 
     fn find_all(&mut self) -> Vec<Ingredient>
     {
-        let query = "SELECT * FROM `ingredient`";
+        let query = "SELECT *, 0 AS quantite FROM `ingredient`";
         let result: Vec<Row> = self.conn.exec(query, ()).unwrap();
         let mut list_ingredients = Vec::new();
         for row in result {

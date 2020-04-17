@@ -37,7 +37,19 @@ impl DAO<Burger> for DAOBurger
 
     fn find_all(&mut self) -> Vec<Burger>
     {
-        unimplemented!()
+        let query = "SELECT * FROM `burger`";
+        let result: Vec<Row> = self.conn.exec(query, ()).unwrap();
+        let mut list_burgers = Vec::new();
+        for row in result
+        {
+            let mut burger = Burger::new();
+            let datas = from_row::<DataFromDb>(row);
+            burger.feed_from_db(datas);
+            burger.set_ingredients(fetch_ingredients(self, burger.get_id()));
+            list_burgers.push(burger);
+        }
+
+        list_burgers
     }
 }
 
