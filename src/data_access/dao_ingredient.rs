@@ -4,7 +4,7 @@ use mysql::{Row, from_row};
 use mysql::prelude::Queryable;
 
 type DataFromDb = (Option<u32>, Option<String>, Option<String>, Option<f32>,
-                   Option<u16>, Option<u8>, Option<u8>, Option<String>);
+                   Option<u16>, Option<u8>, Option<u8>, Option<String>, Option<u8>);
 
 impl DAO<Ingredient> for DAOIngredient
 {

@@ -5,7 +5,8 @@ pub struct Ingredient
     description: String,
     prix: f32,
     calories: u16,
-    image: String
+    image: String,
+    quantite: u8
 }
 mod ingredient;
 

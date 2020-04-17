@@ -11,7 +11,8 @@ impl Ingredient
             description: "".to_string(),
             prix: 0.0,
             calories: 0,
-            image: "".to_string()
+            image: "".to_string(),
+            quantite: 0
         }
     }
 
@@ -56,6 +57,13 @@ impl Ingredient
     pub fn set_image(&mut self, image: &str) {
         self.image = image.to_string();
     }
+
+    pub fn get_quantite(&self) -> u8 {
+        self.quantite
+    }
+    pub fn set_quantite(&mut self, quantite: u8) {
+        self.quantite = quantite;
+    }
 }
 
 impl Display for Ingredient
@@ -70,7 +78,7 @@ impl Display for Ingredient
 }
 
 type DataFromDb = (Option<u32>, Option<String>, Option<String>, Option<f32>,
-                   Option<u16>, Option<u8>, Option<u8>, Option<String>);
+                   Option<u16>, Option<u8>, Option<u8>, Option<String>, Option<u8>);
 
 impl Ingredient
 {
@@ -100,5 +108,9 @@ impl Ingredient
             Some(x) => x,
             None => ""
         });
+        self.set_quantite(match datas.8 {
+            Some(x) => x,
+            None => 0
+        })
     }
 }

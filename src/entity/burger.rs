@@ -84,3 +84,37 @@ impl Display for Burger
                self.get_recette(), self.get_image(), self.get_quantite())
     }
 }
+
+type DataFromDb = (Option<u32>, Option<String>, Option<f32>, Option<String>,
+                   Option<String>, Option<String>);
+
+impl Burger
+{
+    pub fn feed_from_db(&mut self, datas: DataFromDb)
+    {
+        self.set_id(match datas.0 {
+            Some(x) => x,
+            None => 0
+        });
+        self.set_nom(match &datas.1 {
+            Some(x) => x,
+            None => ""
+        });
+        self.set_description(match &datas.3 {
+            Some(x) => x,
+            None => ""
+        });
+        self.set_prix(match datas.2 {
+            Some(x) => x,
+            None => 0.0
+        });
+        self.set_recette(match &datas.4 {
+            Some(x) => x,
+            None => ""
+        });
+        self.set_image(match &datas.5 {
+            Some(x) => x,
+            None => ""
+        });
+    }
+}
