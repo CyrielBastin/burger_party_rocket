@@ -1,5 +1,6 @@
 use super::Boisson;
 use std::fmt::{Display, Formatter, Result};
+use std::collections::HashMap;
 
 impl Boisson
 {
@@ -12,7 +13,7 @@ impl Boisson
             prix: 0.0,
             calories: 0,
             image: "".to_string(),
-            quantite: 0
+            quantite: HashMap::new()
         }
     }
 
@@ -58,10 +59,10 @@ impl Boisson
         self.image = image.to_string();
     }
 
-    pub fn get_quantite(&self) -> u8 {
-        self.quantite
+    pub fn get_quantite(&self) -> &HashMap<u32, u8> {
+        &self.quantite
     }
-    pub fn set_quantite(&mut self, quantite: u8) {
+    pub fn set_quantite(&mut self, quantite: HashMap<u32, u8>) {
         self.quantite = quantite;
     }
 }

@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 #[derive(Debug)]
 pub struct Ingredient
 {
@@ -20,7 +22,7 @@ pub struct Boisson
     prix: f32,
     calories: u16,
     image: String,
-    quantite: u8
+    quantite: HashMap<u32, u8>
 }
 mod boisson;
 
@@ -33,7 +35,7 @@ pub struct Burger
     prix: f32,
     recette: String,
     image: String,
-    quantite: u8,
+    quantite: HashMap<u32, u8>,
     ingredients: Vec<Ingredient>
 }
 mod burger;

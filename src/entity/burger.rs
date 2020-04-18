@@ -1,5 +1,6 @@
 use super::{Burger, Ingredient};
 use std::fmt::{Display, Formatter, Result};
+use std::collections::HashMap;
 
 impl Burger
 {
@@ -12,7 +13,7 @@ impl Burger
             prix: 0.0,
             recette: "".to_string(),
             image: "".to_string(),
-            quantite: 0,
+            quantite: HashMap::new(),
             ingredients: Vec::new()
         }
     }
@@ -59,10 +60,10 @@ impl Burger
         self.image = image.to_string();
     }
 
-    pub fn get_quantite(&self) -> u8 {
-        self.quantite
+    pub fn get_quantite(&self) -> &HashMap<u32, u8> {
+        &self.quantite
     }
-    pub fn set_quantite(&mut self, quantite: u8) {
+    pub fn set_quantite(&mut self, quantite: HashMap<u32, u8>) {
         self.quantite = quantite;
     }
 
