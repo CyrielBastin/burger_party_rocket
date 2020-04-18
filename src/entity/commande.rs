@@ -70,6 +70,8 @@ impl Display for Commande
     }
 }
 
+type DataFromDb = (Option<u32>, Option<u8>, Option<String>, Option<u8>, Option<u8>);
+
 impl Commande {
     pub fn get_local_to_string() -> String
     {
@@ -82,5 +84,25 @@ impl Commande {
         result.push_str(&re.captures(&text).unwrap()[1]);
 
         result
+    }
+
+    pub fn feed_from_db(&mut self, datas: DataFromDb)
+    {
+        self.set_id(match datas.0 {
+            Some(x) => x,
+            None => 0
+        });
+        self.set_heure(match &datas.2 {
+            Some(x) => x,
+            None => ""
+        });
+        self.set_terminal(match datas.3 {
+            Some(x) => x,
+            None => 0
+        });
+        self.set_paye(match datas.4 {
+            Some(x) => if x == 0 {false} else {true},
+            None => false
+        });
     }
 }

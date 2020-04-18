@@ -13,7 +13,7 @@ impl Burger
             prix: 0.0,
             recette: "".to_string(),
             image: "".to_string(),
-            quantite: HashMap::new(),
+            quantite: 0,
             ingredients: Vec::new()
         }
     }
@@ -60,10 +60,10 @@ impl Burger
         self.image = image.to_string();
     }
 
-    pub fn get_quantite(&self) -> &HashMap<u32, u8> {
-        &self.quantite
+    pub fn get_quantite(&self) -> u8 {
+        self.quantite
     }
-    pub fn set_quantite(&mut self, quantite: HashMap<u32, u8>) {
+    pub fn set_quantite(&mut self, quantite: u8) {
         self.quantite = quantite;
     }
 
@@ -80,9 +80,9 @@ impl Display for Burger
     fn fmt(&self, f: &mut Formatter<'_>) -> Result
     {
         write!(f, "Burger {{\n\tid: {},\n\tnom: {},\n\tdescription: {},\n\t\
-                prix: {},\n\trecette: {},\n\timage: {},\n}}",
+                prix: {},\n\trecette: {},\n\timage: {},\n\tquantite: {}\n}}",
                self.get_id(), self.get_nom(), self.get_description(), self.get_prix(),
-               self.get_recette(), self.get_image())
+               self.get_recette(), self.get_image(), self.get_quantite())
     }
 }
 

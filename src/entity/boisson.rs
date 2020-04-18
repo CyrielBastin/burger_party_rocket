@@ -13,7 +13,7 @@ impl Boisson
             prix: 0.0,
             calories: 0,
             image: "".to_string(),
-            quantite: HashMap::new()
+            quantite: 0
         }
     }
 
@@ -59,10 +59,10 @@ impl Boisson
         self.image = image.to_string();
     }
 
-    pub fn get_quantite(&self) -> &HashMap<u32, u8> {
-        &self.quantite
+    pub fn get_quantite(&self) -> u8 {
+        self.quantite
     }
-    pub fn set_quantite(&mut self, quantite: HashMap<u32, u8>) {
+    pub fn set_quantite(&mut self, quantite: u8) {
         self.quantite = quantite;
     }
 }
@@ -72,9 +72,9 @@ impl Display for Boisson
     fn fmt(&self, f: &mut Formatter<'_>) -> Result
     {
         write!(f, "Boisson {{\n\tid: {},\n\tnom: {},\n\tdescription: {},\n\t\
-                prix: {},\n\tcalories: {},\n\timage: {},\n}}",
+                prix: {},\n\tcalories: {},\n\timage: {},\n\tquantite: {}\n}}",
                self.get_id(), self.get_nom(), self.get_description(), self.get_prix(),
-               self.get_calories(), self.get_image())
+               self.get_calories(), self.get_image(), self.get_quantite())
     }
 }
 
