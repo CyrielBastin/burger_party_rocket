@@ -72,14 +72,14 @@ impl Display for Boisson
     fn fmt(&self, f: &mut Formatter<'_>) -> Result
     {
         write!(f, "Boisson {{\n\tid: {},\n\tnom: {},\n\tdescription: {},\n\t\
-                prix: {},\n\tcalories: {},\n\timage: {},\n\tquantite: {}\n}}",
+                prix: {},\n\tcalories: {},\n\timage: {},\n}}",
                self.get_id(), self.get_nom(), self.get_description(), self.get_prix(),
-               self.get_calories(), self.get_image(), self.get_quantite())
+               self.get_calories(), self.get_image())
     }
 }
 
 type DataFromDb = (Option<u32>, Option<String>, Option<f32>, Option<String>,
-                   Option<u16>, Option<u8>, Option<u8>, Option<String>);
+                   Option<u16>, Option<u8>, Option<u8>, Option<String>, Option<u8>);
 impl Boisson
 {
     pub fn feed_from_db(&mut self, datas: DataFromDb)

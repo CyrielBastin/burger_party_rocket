@@ -80,14 +80,14 @@ impl Display for Burger
     fn fmt(&self, f: &mut Formatter<'_>) -> Result
     {
         write!(f, "Burger {{\n\tid: {},\n\tnom: {},\n\tdescription: {},\n\t\
-                prix: {},\n\trecette: {},\n\timage: {},\n\tquantite: {}\n}}",
+                prix: {},\n\trecette: {},\n\timage: {},\n}}",
                self.get_id(), self.get_nom(), self.get_description(), self.get_prix(),
-               self.get_recette(), self.get_image(), self.get_quantite())
+               self.get_recette(), self.get_image())
     }
 }
 
 type DataFromDb = (Option<u32>, Option<String>, Option<f32>, Option<String>,
-                   Option<String>, Option<String>);
+                   Option<String>, Option<String>, Option<u8>);
 
 impl Burger
 {
