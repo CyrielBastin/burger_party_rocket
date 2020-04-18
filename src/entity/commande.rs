@@ -1,5 +1,7 @@
 use super::{Commande, Burger, Boisson};
 use std::fmt::{Display, Formatter, Result};
+use chrono::Local;
+use regex::Regex;
 
 impl Commande
 {
@@ -65,5 +67,20 @@ impl Display for Commande
         write!(f, "Commande {{\n\tid: {},\n\tterminal: {},\n\theure: {},\n\t\
                 paye: {}\n}}",
                self.get_id(), self.get_terminal(), self.get_heure(), self.get_paye())
+    }
+}
+
+impl Commande {
+    pub fn get_local_to_string() -> String
+    {
+        let local = Local::now();
+        let text = local.to_string();
+        let re = Regex::new(r"(^.*)\.(.*$)").unwrap();
+        let mut result = String::from("");
+        // captures the DateTime of the string up until milliseconds
+        // in order to push it to the Database
+        result.push_str(&re.captures(&text).unwrap()[1]);
+
+        result
     }
 }
