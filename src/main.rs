@@ -7,6 +7,6 @@ fn main()
 {
     println!("Hello, world!");
     let mut repo = DAOFactory::create_dao_commande();
-    let a = repo.find_by_id(1);
+    let a = repo.find_by_id(2);
     println!("{:#?}", a);
 }
