@@ -1,5 +1,6 @@
 mod data_access;
 mod entity;
+mod types;
 
 use data_access::{DAOFactory, DAO};
 
