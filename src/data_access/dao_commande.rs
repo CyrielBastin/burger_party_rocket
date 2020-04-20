@@ -50,6 +50,7 @@ impl DAO<Commande> for DAOCommande
     }
 }
 
+#[allow(dead_code)]
 impl DAOCommande
 {
     pub fn get_id_from_datetime(&mut self, datetime: &str) -> u32

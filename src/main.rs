@@ -5,13 +5,10 @@
 mod data_access;
 mod entity;
 mod types;
+mod controller;
 
-#[get("/")]
-fn index() -> &'static str {
-    "Hello world !"
-}
 
 fn main()
 {
-    rocket::ignite().mount("/", routes![index]).launch();
+    rocket::ignite().mount("/", routes![controller::homepage_controller::index]).launch();
 }

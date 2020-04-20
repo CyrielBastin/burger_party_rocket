@@ -3,6 +3,7 @@ use std::fmt::{Display, Formatter, Result};
 use chrono::Local;
 use regex::Regex;
 
+#[allow(dead_code)]
 impl Commande
 {
     pub fn new() -> Self
@@ -72,6 +73,7 @@ impl Display for Commande
 
 type DataFromDb = (Option<u32>, Option<u8>, Option<String>, Option<u8>, Option<u8>);
 
+#[allow(dead_code)]
 impl Commande {
     pub fn get_local_to_string() -> String
     {

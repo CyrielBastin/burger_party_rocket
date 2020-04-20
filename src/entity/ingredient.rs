@@ -1,6 +1,7 @@
 use super::Ingredient;
 use std::fmt::{Display, Formatter, Result};
 
+#[allow(dead_code)]
 impl Ingredient
 {
     pub fn new() -> Self

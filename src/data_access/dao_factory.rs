@@ -1,6 +1,7 @@
 use super::DAOFactory;
 use crate::data_access::{DbConnection, DAOIngredient, DAOBoisson, DAOBurger, DAOCommande};
 
+#[allow(dead_code)]
 impl DAOFactory
 {
     pub fn create_dao_ingredient() -> DAOIngredient {

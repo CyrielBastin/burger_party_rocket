@@ -1,6 +1,7 @@
 use super::{Burger, Ingredient};
 use std::fmt::{Display, Formatter, Result};
 
+#[allow(dead_code)]
 impl Burger
 {
     pub fn new() -> Self
