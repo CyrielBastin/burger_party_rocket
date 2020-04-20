@@ -28,18 +28,26 @@ impl DAO<Commande> for DAOCommande
         let result: Row = self.conn.exec_first(query, (id,)).unwrap().unwrap();
         let datas = from_row::<CmdFromDb>(result);
         let mut commande = Commande::new();
-        commande.feed_from_db(datas);
-        // Once the command has been retrieved, we fetch drinks
-        commande.set_boissons(fetch_boissons(self, id));
-        // Finally, we fetch burgers and their ingredients
-        commande.set_burgers(fetch_burgers(self, id));
+        self.get_all_details(&mut commande, datas, id);
 
         commande
     }
 
     fn find_all(&mut self) -> Vec<Commande>
     {
-        unimplemented!()
+        let query = "SELECT id, n_table, CAST(heure AS CHAR), n_serveur, paye FROM `commande`";
+        let result: Vec<Row> = self.conn.exec(query, ()).unwrap();
+        let mut list_commandes = Vec::new();
+        for row in result
+        {
+            let datas = from_row::<CmdFromDb>(row);
+            let mut commande = Commande::new();
+            let cmd_id = datas.0.unwrap();
+            self.get_all_details(&mut commande, datas, cmd_id);
+            list_commandes.push(commande);
+        }
+
+        list_commandes
     }
 }
 
@@ -52,6 +60,15 @@ impl DAOCommande
         let data = from_row::<(u32)>(result);
 
         data
+    }
+
+    fn get_all_details(&mut self, commande: &mut Commande, datas: CmdFromDb, id: u32)
+    {
+        commande.feed_from_db(datas);
+        // Once the command has been retrieved, we fetch drinks
+        commande.set_boissons(fetch_boissons(self, id));
+        // Finally, we fetch burgers and their ingredients
+        commande.set_burgers(fetch_burgers(self, id));
     }
 }
 
