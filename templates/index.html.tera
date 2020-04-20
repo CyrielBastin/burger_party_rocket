@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Burger_Party</title>
-	<link rel="stylesheet" href="../../public/css/main.css">
+	<link rel="stylesheet" href="public/css/get/main">
 </head>
 <body>
 	<div id="burger_party">
-		<img id="burger_party-logo" src="../../public/images/logo.svg" alt="image_logo">
+		<img id="burger_party-logo" src="public/image/get/logo/svg" alt="image_logo">
 		<p id="burger_party-txt">BURGER PARTY</p>
 	</div>
 

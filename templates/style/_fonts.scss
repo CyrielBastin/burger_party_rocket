@@ -1,0 +1,28 @@
+@font-face
+{
+    font-family: Righteous;
+    src: url('../../../public/font/get/Righteous-Regular/ttf');
+}
+
+@font-face
+{
+    font-family: Roboto;
+    src: url('../../../public/font/get/Roboto-Regular/ttf');
+}
+
+@font-face
+{
+    font-family: Saira;
+    src: url('../../../public/font/get/Saira-Regular/ttf');
+}
+
+@font-face
+{
+    font-family: Salsa;
+    src: url('../../../public/font/get/Salsa-Regular/ttf');
+}
+
+$Righteous: Righteous;
+$Roboto: Roboto;
+$Saira: Saira;
+$Salsa: Salsa;
