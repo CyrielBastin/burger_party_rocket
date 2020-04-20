@@ -1,0 +1,41 @@
+@use 'fonts';
+@use 'colors';
+
+.title_info
+{
+    text-align: center;
+    text-decoration: underline;
+    font-family: fonts.$Salsa;
+    font-size: 8vh;
+    color: colors.$orange;
+}
+
+.container
+{
+    display: block;
+    margin: 0 5vw;
+    padding: 0 10px;
+}
+
+#burger_party-logo
+{
+    max-width: 15.6vw;
+    max-height: 16.7vh;
+    float: left;
+    margin-right: 15px;
+}
+
+#description-txt
+{
+    text-align: justify;
+    font-family: fonts.$Salsa;
+    font-size: 4vh;
+    color: #000000;
+}
+
+.btm-corner-left
+{
+    position: absolute;
+    top: 85vh;
+    left: 3vw;
+}

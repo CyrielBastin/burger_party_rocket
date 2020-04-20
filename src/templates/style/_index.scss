@@ -1,0 +1,84 @@
+@use 'colors';
+@use 'fonts';
+
+html
+{
+    box-sizing: border-box;
+}
+*, *::before, *::after
+{
+    box-sizing: inherit;
+}
+
+body
+{
+    background-color: colors.$green;
+}
+
+#burger_party
+{
+    margin: 11vh auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    #burger_party-logo
+    {
+        max-width: 15.6vw;
+        max-height: 16.7vh;
+    }
+    #burger_party-txt
+    {
+        font-family: fonts.$Righteous;
+        font-size: 8vh;
+        color: colors.$orange;
+        margin-left: 3vw;
+    }
+}
+
+#menu_client
+{
+    display: block;
+    max-width: 50vw;
+    margin: 0 auto;
+
+    #nouvelle_commande, #informations_produits, #qui_sommes_nous
+    {
+        margin-bottom: 8vh;
+    }
+}
+
+.btn-control
+{
+    width: 47.5vw;
+    color: colors.$green_dark;
+    font-family: fonts.$Salsa;
+    font-size: 4vh;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 2px 7px colors.$green_shadow;
+}
+
+.big
+{
+    height: 10vh;
+    line-height: 10vh;
+    border-radius: 50px;
+}
+
+.normal
+{
+    height: 8.3vh;
+    line-height: 8.3vh;
+    border-radius: 40px
+}
+
+.orange
+{
+    background-color: colors.$orange;
+}
+
+.orange_light
+{
+    background-color: colors.$orange_light;
+}
