@@ -1,6 +1,5 @@
 use super::Boisson;
 use std::fmt::{Display, Formatter, Result};
-use std::collections::HashMap;
 
 impl Boisson
 {

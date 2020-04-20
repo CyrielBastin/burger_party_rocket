@@ -1,8 +1,7 @@
-use crate::data_access::{DAO, DAOCommande, DAOBurger, DAOFactory};
-use crate::entity::{Commande, Boisson, Burger};
 use mysql::{Row, from_row};
 use mysql::prelude::Queryable;
-use std::collections::HashMap;
+use crate::data_access::{DAO, DAOCommande, DAOFactory};
+use crate::entity::{Commande, Boisson, Burger};
 use crate::data_access::dao_burger::fetch_ingredients;
 use crate::types::db_types::{CmdFromDb, DrkFromDb, BurFromDb};
 
@@ -57,7 +56,7 @@ impl DAOCommande
     {
         let query = "SELECT `id` FROM `commande` WHERE `heure` = ?";
         let result: Row = self.conn.exec_first(query, (datetime,)).unwrap().unwrap();
-        let data = from_row::<(u32)>(result);
+        let data = from_row::<u32>(result);
 
         data
     }

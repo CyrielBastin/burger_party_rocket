@@ -1,6 +1,5 @@
 use super::{Burger, Ingredient};
 use std::fmt::{Display, Formatter, Result};
-use std::collections::HashMap;
 
 impl Burger
 {

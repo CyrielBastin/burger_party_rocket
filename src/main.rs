@@ -1,13 +1,17 @@
+#![feature(proc_macro_hygiene, decl_macro)]
+
+#[macro_use] extern crate rocket;
+
 mod data_access;
 mod entity;
 mod types;
 
-use data_access::{DAOFactory, DAO};
+#[get("/")]
+fn index() -> &'static str {
+    "Hello world !"
+}
 
 fn main()
 {
-    println!("Hello, world!");
-    let mut repo = DAOFactory::create_dao_commande();
-    let a = repo.find_by_id(1);
-    println!("{:#?}", a);
+    rocket::ignite().mount("/", routes![index]).launch();
 }
