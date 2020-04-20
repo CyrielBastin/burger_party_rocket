@@ -13,7 +13,8 @@ mod controller;
 fn main()
 {
     rocket::ignite()
-            .mount("/", routes![controller::homepage_controller::index])
+            .mount("/", routes![controller::homepage_controller::index,
+                                controller::homepage_controller::qui_sommes_nous])
             .mount("/public", routes![controller::public_resources_controller::get_css,
                                       controller::public_resources_controller::get_font,
                                       controller::public_resources_controller::get_image,
