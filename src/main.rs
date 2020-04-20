@@ -16,7 +16,8 @@ fn main()
             .mount("/", routes![controller::homepage_controller::index])
             .mount("/public", routes![controller::public_resources_controller::get_css,
                                       controller::public_resources_controller::get_font,
-                                      controller::public_resources_controller::get_image])
+                                      controller::public_resources_controller::get_image,
+                                      controller::public_resources_controller::get_js])
             .attach(Template::fairing())
             .launch();
 }

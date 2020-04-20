@@ -29,3 +29,12 @@ pub fn get_image(img_name: &RawStr, ext: &RawStr) -> io::Result<NamedFile>
 
     NamedFile::open(file_path)
 }
+
+#[allow(dead_code)]
+#[get("/js/get/<file_name>")]
+pub fn get_js(file_name: &RawStr) -> io::Result<NamedFile>
+{
+    let file_path = format!("./public/js/{}.js", file_name);
+
+    NamedFile::open(file_path)
+}
