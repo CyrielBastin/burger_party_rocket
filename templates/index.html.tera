@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Burger_Party</title>
-	<link rel="stylesheet" href="public/css/get/main">
-</head>
-<body>
+{% extends '_base' %}
+
+{% block title %}
+	Burger Party
+{% endblock title %}
+
+{% block body %}
 	<div id="burger_party">
 		<img id="burger_party-logo" src="public/image/get/logo/svg" alt="image_logo">
 		<p id="burger_party-txt">BURGER PARTY</p>
@@ -17,5 +15,4 @@
 		<div id="informations_produits" class="btn-control normal orange_light">Informations Produits</div>
 		<a href="/qui-sommes-nous"><div id="qui_sommes_nous" class="btn-control normal orange_light">Qui Sommes-Nous ?</div></a>
 	</div>
-</body>
-</html>
+{% endblock body %}
