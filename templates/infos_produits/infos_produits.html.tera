@@ -13,10 +13,12 @@
             </div>
         </div>
         <div class="grid-bur_drk">
-            <div class="burger-overview">
-                <img class="burger-img" src="./a.png" alt="aa">
-                <div class="burger-name">Bacon Max.</div>
-            </div>
+            {% for burger in burgers %}
+                <div class="burger-overview">
+                    <img class="burger-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
+                    <div class="burger-name">{{ burger.nom }}</div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 

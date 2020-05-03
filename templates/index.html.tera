@@ -6,7 +6,7 @@
 
 {% block body %}
 	<div id="burger_party">
-		<img id="burger_party-logo" src="public/image/get/logo/svg" alt="image_logo">
+		<img id="burger_party-logo" src="public/image/get/autres/logo/svg" alt="image_logo">
 		<p id="burger_party-txt">BURGER PARTY</p>
 	</div>
 

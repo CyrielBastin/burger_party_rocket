@@ -22,10 +22,10 @@ pub fn get_font(font_name: &RawStr, ext: &RawStr) -> io::Result<NamedFile>
     NamedFile::open(file_path)
 }
 
-#[get("/image/get/<img_name>/<ext>")]
-pub fn get_image(img_name: &RawStr, ext: &RawStr) -> io::Result<NamedFile>
+#[get("/image/get/<kind>/<img_name>/<ext>")]
+pub fn get_image(kind: &RawStr, img_name: &RawStr, ext: &RawStr) -> io::Result<NamedFile>
 {
-    let file_path = format!("./public/images/{}.{}", img_name, ext);
+    let file_path = format!("./public/images/{}/{}.{}", kind, img_name, ext);
 
     NamedFile::open(file_path)
 }

@@ -28,19 +28,31 @@
 {
   width: 75vw;
   height: 70vh;
-  background-color: aquamarine;
+  background-image: url("/public/image/get/burgers/_burger_background/svg");
+  background-repeat: no-repeat;
+  background-size: cover;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  overflow: auto;
+}
+
+.burger-overview
+{
+  display: block;
+  justify-self: center;
 }
 
 .burger-img
 {
   width: 16vw;
   height: 22vh;
+  max-width: 16vw;
+  max-height: 22vh;
 }
 .burger-name
 {
   max-width: 16vw;
   font-size: 4vh;
   overflow: hidden;
+  text-align: center;
 }
