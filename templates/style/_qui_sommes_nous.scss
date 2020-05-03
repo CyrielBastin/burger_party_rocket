@@ -1,5 +1,5 @@
-@use 'fonts';
-@use 'colors';
+@use "fonts";
+@use "colors";
 
 .title_info
 {
@@ -33,9 +33,9 @@
     color: #000000;
 }
 
-.btm-corner-left
+.btn-corner-left
 {
     position: absolute;
-    top: 85vh;
+    top: 87vh;
     left: 3vw;
 }

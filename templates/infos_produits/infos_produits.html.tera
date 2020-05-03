@@ -3,15 +3,22 @@
 {% block title %}Infos Produits{% endblock title %}
 
 {% block body %}
-<h1 class="title_info">Informations Produits</h1>
+    <h1 class="title_info" style="margin-top: -10px;">Informations Produits</h1>
 
-<div class="container">
-    <div class="menu-bur_drk letf-center">
-        <div class="orange">Burgers</div>
-        <div class="blue">Boissons</div>
+    <div class="container flex">
+        <div class="tab-menu">
+            <div class="menu-bur_drk">
+                <div class="tab-burger orange">Burgers</div>
+                <div class="tab-drink blue">Boissons</div>
+            </div>
+        </div>
+        <div class="grid-bur_drk">
+            <div class="burger-overview">
+                <img class="burger-img" src="./a.png" alt="aa">
+                <div class="burger-name">Bacon Max.</div>
+            </div>
+        </div>
     </div>
-    <div class="grid-bur_drk"></div>
-</div>
 
-<a href="/"><div id="menu_principal" class="btn-control normal orange btm-corner-left">Menu Principal</div></a>
+    <a href="/"><div id="menu_principal" class="btn-control normal orange btn-corner-left">Menu Principal</div></a>
 {% endblock body %}

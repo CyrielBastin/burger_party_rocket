@@ -1,0 +1,46 @@
+@use "fonts";
+
+.flex
+{
+  display: flex;
+}
+
+.tab-menu
+{
+  position: flex;
+  align-self: center;
+}
+
+.tab-burger, .tab-drink
+{
+  width: 20vw;
+  height: 8vh;
+  font-size: 5vh;
+  text-align: center;
+  line-height: 8vh;
+  margin-right: 40px;
+  margin: 30px 1px;
+  border-radius: 15px;
+  font-family: fonts.$Salsa;
+}
+
+.grid-bur_drk
+{
+  width: 75vw;
+  height: 70vh;
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.burger-img
+{
+  width: 16vw;
+  height: 22vh;
+}
+.burger-name
+{
+  max-width: 16vw;
+  font-size: 4vh;
+  overflow: hidden;
+}
