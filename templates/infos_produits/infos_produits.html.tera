@@ -1,0 +1,17 @@
+{% extends '_base' %}
+
+{% block title %}Infos Produits{% endblock title %}
+
+{% block body %}
+<h1 class="title_info">Informations Produits</h1>
+
+<div class="container">
+    <div class="menu-bur_drk letf-center">
+        <div class="orange">Burgers</div>
+        <div class="blue">Boissons</div>
+    </div>
+    <div class="grid-bur_drk"></div>
+</div>
+
+<a href="/"><div id="menu_principal" class="btn-control normal orange btm-corner-left">Menu Principal</div></a>
+{% endblock body %}

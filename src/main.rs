@@ -13,12 +13,13 @@ mod controller;
 fn main()
 {
     rocket::ignite()
-            .mount("/", routes![controller::homepage_controller::index,
-                                controller::homepage_controller::qui_sommes_nous])
-            .mount("/public", routes![controller::public_resources_controller::get_css,
-                                      controller::public_resources_controller::get_font,
-                                      controller::public_resources_controller::get_image,
-                                      controller::public_resources_controller::get_js])
-            .attach(Template::fairing())
-            .launch();
+        .mount("/", routes![controller::homepage_controller::index,
+                            controller::homepage_controller::qui_sommes_nous])
+        .mount("/public", routes![controller::public_resources_controller::get_css,
+                                  controller::public_resources_controller::get_font,
+                                  controller::public_resources_controller::get_image,
+                                  controller::public_resources_controller::get_js])
+        .mount("/informations-produits", routes![controller::infos_prod_controller::infos_produits])
+        .attach(Template::fairing())
+        .launch();
 }

@@ -12,7 +12,7 @@
 
 	<div id="menu_client">
 		<div id="nouvelle_commande" class="btn-control big orange">Nouvelle Commande</div>
-		<div id="informations_produits" class="btn-control normal orange_light">Informations Produits</div>
+        <a href="/informations-produits/burger"><div id="informations_produits" class="btn-control normal orange_light">Informations Produits</div></a>
 		<a href="/qui-sommes-nous"><div id="qui_sommes_nous" class="btn-control normal orange_light">Qui Sommes-Nous ?</div></a>
 	</div>
 {% endblock body %}
