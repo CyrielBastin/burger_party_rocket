@@ -1,4 +1,5 @@
 @use "fonts";
+@use "colors";
 
 .flex
 {
@@ -9,6 +10,11 @@
 {
   position: flex;
   align-self: center;
+}
+
+.menu-bur_drk a
+{
+  color: #000000;
 }
 
 .tab-burger, .tab-drink
@@ -22,37 +28,47 @@
   margin: 30px 1px;
   border-radius: 15px;
   font-family: fonts.$Salsa;
+  cursor: pointer;
 }
 
 .grid-bur_drk
 {
   width: 75vw;
   height: 70vh;
-  background-image: url("/public/image/get/burgers/_burger_background/svg");
-  background-repeat: no-repeat;
-  background-size: cover;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   overflow: auto;
 }
 
-.burger-overview
+.background-orange
+{
+  background-color: colors.$orange_background;
+}
+.background-white
+{
+  background-color: colors.$blue;
+}
+
+.burger-overview, .boisson-overview
 {
   display: block;
   justify-self: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.burger-img
+.burger-img, .boisson-img
 {
   width: 16vw;
   height: 22vh;
   max-width: 16vw;
   max-height: 22vh;
 }
-.burger-name
+.burger-name, .boisson-name
 {
   max-width: 16vw;
   font-size: 4vh;
   overflow: hidden;
   text-align: center;
+  font-family: fonts.$Salsa;
 }

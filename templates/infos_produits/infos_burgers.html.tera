@@ -1,0 +1,14 @@
+{% extends 'infos_produits/infos_produits' %}
+
+{% block h1 %}Infos Burgers{% endblock h1 %}
+
+
+{% block color %}background-orange{% endblock color %}
+{% block burger_drink %}
+    {% for burger in burgers %}
+        <div class="burger-overview">
+            <img class="burger-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
+            <div class="burger-name">{{ burger.nom }}</div>
+        </div>
+    {% endfor %}
+{% endblock burger_drink %}

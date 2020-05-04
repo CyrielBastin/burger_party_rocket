@@ -19,7 +19,8 @@ fn main()
                                   controller::public_resources_controller::get_font,
                                   controller::public_resources_controller::get_image,
                                   controller::public_resources_controller::get_js])
-        .mount("/informations-produits", routes![controller::infos_prod_controller::infos_produits])
+        .mount("/informations-produits", routes![controller::infos_prod_controller::infos_burgers,
+                                                 controller::infos_prod_controller::infos_boissons])
         .attach(Template::fairing())
         .launch();
 }
