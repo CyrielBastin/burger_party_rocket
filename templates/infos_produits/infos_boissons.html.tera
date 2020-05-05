@@ -7,7 +7,9 @@
 {% block burger_drink %}
     {% for boisson in boissons %}
         <div class="boisson-overview">
-            <img class="boisson-img" src="/public/image/get/boissons/{{ boisson.image }}/svg" alt="Drink's image">
+            <a href="/informations-produits/boissons/boisson/{{ boisson.id }}">
+                <img class="boisson-img" src="/public/image/get/boissons/{{ boisson.image }}/svg" alt="Drink's image">
+            </a>
             <div class="boisson-name">{{ boisson.nom }}</div>
         </div>
     {% endfor %}

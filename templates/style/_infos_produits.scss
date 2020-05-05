@@ -63,3 +63,76 @@
   text-align: center;
   font-family: fonts.$Salsa;
 }
+
+//====================================================================================================
+// Details Burgers et Boissons
+//====================================================================================================
+
+.container-center
+{
+  width: 88vw;
+  height: 78vh;
+  margin: 11vh auto;
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 0.13fr 0.18fr 0.11fr 0.29fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  overflow: auto;
+
+  .el
+  {
+    color: colors.$white;
+    background-color: colors.$green_dark;
+    font-family: fonts.$Salsa;
+    font-size: 6vh;
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  .bur-prix
+  {
+    margin-right: 15px;
+  }
+}
+
+.bur-img
+{
+  max-width: 25vw;
+  max-height: 33vh;
+  grid-row-start: 1;
+  grid-row-end: span 3;
+  grid-column-start: 1;
+}
+
+.bur-name
+{
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+}
+
+.bur-desc
+{
+  grid-row-start: 2;
+  grid-column-start: 2;
+  grid-column-end: span 2;
+}
+
+.bur-prix
+{
+  grid-row-start: 3;
+  grid-column-start: 2;
+}
+
+.bur-cal
+{
+  grid-row-start: 3;
+  grid-column-start: 3;
+}
+
+.bur-recette
+{
+  grid-row-start: 4;
+  grid-column-start: 1;
+  grid-column-end: span 3;
+}
