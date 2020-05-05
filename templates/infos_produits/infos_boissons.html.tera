@@ -3,7 +3,7 @@
 {% block h1 %}Infos Boissons{% endblock h1 %}
 
 
-{% block color %}background-white{% endblock color %}
+{% block color %}background-blue{% endblock color %}
 {% block burger_drink %}
     {% for boisson in boissons %}
         <div class="boisson-overview">

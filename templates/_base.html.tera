@@ -8,7 +8,7 @@
     <title>{% block title %}Super title here{% endblock title %}</title>
     <link rel="stylesheet" href="/public/css/get/main">
 </head>
-<body>
+<body class="{% block body_background %}background-green{% endblock body_background %}">
 {% block body %}
 {% endblock body %}
 </body>

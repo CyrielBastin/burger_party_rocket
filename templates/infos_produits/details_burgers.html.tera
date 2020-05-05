@@ -1,0 +1,6 @@
+{% extends '_base' %}
+
+{% block title %}Détails : {{ burger.nom }}{% endblock title %}
+
+{% block body %}
+{% endblock body %}

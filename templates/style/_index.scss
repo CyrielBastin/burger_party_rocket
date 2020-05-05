@@ -10,11 +10,6 @@ html
     box-sizing: inherit;
 }
 
-body
-{
-    background-color: colors.$green;
-}
-
 #burger_party
 {
     margin: 11vh auto;
@@ -76,24 +71,4 @@ a
     height: 8.3vh;
     line-height: 8.3vh;
     border-radius: 40px
-}
-
-.orange
-{
-    background-color: colors.$orange;
-}
-
-.orange_light
-{
-    background-color: colors.$orange_light;
-}
-
-.orange_background
-{
-    background-color: colors.$orange_background;
-}
-
-.blue
-{
-    background-color: colors.$blue;
 }
