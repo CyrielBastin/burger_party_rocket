@@ -4,12 +4,12 @@
 
 {% block body_background %}background-green_light{% endblock body_background %}
 {% block body %}
-    <div class="container-center background-green">
-        <img class="el bur-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
-        <div class="el bur-name">{{ burger.nom }}</div>
-        <div class="el bur-desc">{{ burger.description }}</div>
-        <div class="el bur-prix">Prix : {{ burger.prix }} €</div>
-        <div class="el bur-cal">Cal. : {{ calories }} KCal</div>
+    <div class="container-center grid-burger background-green">
+        <img class="el bur_drk-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
+        <div class="el bur_drk-name">{{ burger.nom }}</div>
+        <div class="el bur_drk-desc">{{ burger.description }}</div>
+        <div class="el bur_drk-prix">Prix : {{ burger.prix }} €</div>
+        <div class="el bur_drk-cal">Cal. : {{ calories }} KCal</div>
         <div class="el bur-recette">{{ burger.recette }}</div>
     </div>
     <a href="/informations-produits/burgers"><div class="btn-medium normal bottom-left background-orange green_dark">Retour</div></a>
