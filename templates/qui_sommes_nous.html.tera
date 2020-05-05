@@ -15,6 +15,6 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, obcaecati ab ad provident corporis nostrum nemo libero pariatur voluptatum nam harum, rem et, reiciendis autem. Magnam quibusdam est voluptatem unde?
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dignissimos ducimus laborum.
     </p>
-    <a href="/"><div id="menu_principal" class="btn-control normal background-orange btn-corner-left">Menu Principal</div></a>
+    <a href="/"><div id="menu_principal" class="btn-control normal background-orange bottom-left">Menu Principal</div></a>
 </div>
 {% endblock body %}

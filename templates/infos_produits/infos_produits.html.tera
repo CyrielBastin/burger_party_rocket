@@ -17,5 +17,5 @@
         </div>
     </div>
 
-    <a href="/"><div id="menu_principal" class="btn-control normal background-orange btn-corner-left">Menu Principal</div></a>
+    <a href="/"><div id="menu_principal" class="btn-control normal background-orange bottom-left">Menu Principal</div></a>
 {% endblock body %}

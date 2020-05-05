@@ -71,8 +71,10 @@
 .container-center
 {
   width: 88vw;
-  height: 78vh;
-  margin: 11vh auto;
+  max-height: 78vh;
+  margin-top: 8vh;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px;
   display: grid;
   grid-template-rows: 0.13fr 0.18fr 0.11fr 0.29fr;
@@ -97,8 +99,11 @@
 
 .bur-img
 {
+  display: block;
   max-width: 25vw;
   max-height: 33vh;
+  margin: auto;
+  align-self: center;
   grid-row-start: 1;
   grid-row-end: span 3;
   grid-column-start: 1;
@@ -135,4 +140,21 @@
   grid-row-start: 4;
   grid-column-start: 1;
   grid-column-end: span 3;
+}
+
+.btn-medium
+{
+  width: 40vw;
+  font-family: fonts.$Salsa;
+  font-size: 4vh;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 2px 7px colors.$green_shadow;
+}
+
+.bottom-right
+{
+  position: absolute;
+  top: 87vh;
+  left: 57vw;
 }

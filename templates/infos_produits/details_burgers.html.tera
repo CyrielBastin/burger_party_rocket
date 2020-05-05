@@ -8,9 +8,10 @@
         <img class="el bur-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
         <div class="el bur-name">{{ burger.nom }}</div>
         <div class="el bur-desc">{{ burger.description }}</div>
-        <div class="el bur-prix">{{ burger.prix }}</div>
-        <div class="el bur-cal">{{ calories }}</div>
+        <div class="el bur-prix">Prix : {{ burger.prix }} €</div>
+        <div class="el bur-cal">Cal. : {{ calories }} KCal</div>
         <div class="el bur-recette">{{ burger.recette }}</div>
     </div>
-    <div class="btn-retour background-orange green_dark">Retour</div>
+    <a href="/informations-produits/burgers"><div class="btn-medium normal bottom-left background-orange green_dark">Retour</div></a>
+    <a href="/"><div class="btn-medium normal bottom-right background-orange green_dark">Menu Principal</div></a>
 {% endblock body %}
