@@ -11,7 +11,7 @@
 	</div>
 
 	<div id="menu_client">
-		<div id="nouvelle_commande" class="btn-control big background-orange">Nouvelle Commande</div>
+		<a href="/commande/new"><div id="nouvelle_commande" class="btn-control big background-orange">Nouvelle Commande</div></a>
         <a href="/informations-produits/burgers"><div id="informations_produits" class="btn-control normal background-orange_light">Informations Produits</div></a>
 		<a href="/qui-sommes-nous"><div id="qui_sommes_nous" class="btn-control normal background-orange_light">Qui Sommes-Nous ?</div></a>
 	</div>

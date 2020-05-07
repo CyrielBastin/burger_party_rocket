@@ -1,0 +1,12 @@
+{% extends '_base' %}
+
+{% block title %}Nouvelle Commande{% endblock title %}
+
+{% block body %}
+    <div class="menu-bur_drk">
+        <a href="/informations-produits/burgers"><div class="tab-burger orange_background">Burgers</div></a>
+        <a href="/informations-produits/boissons"><div class="tab-drink background-blue">Boissons</div></a>
+    </div>
+    <div class="grid-bur_drk">
+    </div>
+{% endblock body %}
