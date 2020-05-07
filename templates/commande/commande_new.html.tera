@@ -7,6 +7,14 @@
         <a href="/informations-produits/burgers"><div class="tab-burger orange_background">Burgers</div></a>
         <a href="/informations-produits/boissons"><div class="tab-drink background-blue">Boissons</div></a>
     </div>
-    <div class="grid-bur_drk">
+    <div class="grid-bur_drk orange_background">
+        {% for burger in burgers %}
+        <div class="burger-overview">
+            <a href="/">
+                <img class="burger-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
+            </a>
+            <div class="burger-name">{{ burger.nom }}</div>
+        </div>
+        {% endfor %}
     </div>
 {% endblock body %}

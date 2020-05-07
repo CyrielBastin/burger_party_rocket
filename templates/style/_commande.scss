@@ -1,0 +1,15 @@
+.menu-bur_drk
+{
+  display: flex;
+  flex-direction: row;
+
+  a
+  {
+    margin: -5px 4vw -30px 3vw;
+
+    div
+    {
+      border-radius: 15px 15px 0 0;
+    }
+  }
+}
