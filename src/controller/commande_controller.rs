@@ -11,9 +11,12 @@ pub fn commande_new() -> Template
 {
     let mut burger_repo = DAOFactory::create_dao_burger();
     let list_burgers = burger_repo.find_all();
+    let mut boisson_repo = DAOFactory::create_dao_boisson();
+    let list_boissons = boisson_repo.find_all();
 
     let mut context = Context::new();
     context.insert("burgers", &list_burgers);
+    context.insert("boissons", &list_boissons);
 
     Template::render("commande/commande_new", context)
 }

@@ -4,17 +4,53 @@
 
 {% block body %}
     <div class="menu-bur_drk">
-        <a href="/informations-produits/burgers"><div class="tab-burger orange_background">Burgers</div></a>
-        <a href="/informations-produits/boissons"><div class="tab-drink background-blue">Boissons</div></a>
+        <a><div class="tab-burger orange_background">Burgers</div></a>
+        <a><div class="tab-drink background-blue">Boissons</div></a>
     </div>
-    <div class="grid-bur_drk orange_background">
-        {% for burger in burgers %}
-        <div class="burger-overview">
-            <a href="/">
-                <img class="burger-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
-            </a>
-            <div class="burger-name">{{ burger.nom }}</div>
+
+    <div class="main-section-commande">
+        <div class="listing-bur_drk">
+            <div class="grid-bur_drk orange_background bur-pane">
+                {% for burger in burgers %}
+                <div class="burger-overview">
+                    <img class="burger-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
+                    <div class="burger-name">{{ burger.nom }}</div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="grid-bur_drk background-blue drk-pane" style="display: none;">
+                {% for boisson in boissons %}
+                    <div class="boisson-overview">
+                        <img class="boisson-img" src="/public/image/get/boissons/{{ boisson.image }}/svg" alt="drink's image">
+                        <div class="boisson-name">{{ boisson.nom }}</div>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
-        {% endfor %}
+
+        <div class="cmd-overview">
+            <div class="cmd-list">
+                <div class="cmd-qte"></div>
+                <div class="cmd_mini-det">
+                    <div class="bur-section">
+                        <div class="bur_mini-img"></div>
+                        <div class="bur_mini-name"></div>
+                    </div>
+                    <div class="drk-section">
+                        <div class="drk_mini-img"></div>
+                        <div class="drk_mini-name"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <div class="cmd-footer">
+        <a href="/"><div class="btn-cmd_ctrl normal green_dark background-orange_light bottom-left">Menu Principal</div></a>
+        <a href="/"><div class="btn-cmd_ctrl normal white background-red bottom-middle">Reset Commande</div></a>
+        <a href="/"><div class="btn-cmd_ctrl_big green_dark background-orange bottom-far-right">Détails Commande</div></a>
+    </div>
+
+
+    <script src="/public/js/get/_commande" defer></script>
 {% endblock body %}

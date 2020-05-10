@@ -1,3 +1,6 @@
+@use "fonts";
+@use "colors";
+
 .menu-bur_drk
 {
   display: flex;
@@ -12,4 +15,52 @@
       border-radius: 15px 15px 0 0;
     }
   }
+}
+
+.btn-cmd_ctrl
+{
+  width: 25vw;
+  font-family: fonts.$Salsa;
+  font-size: 4vh;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 2px 7px colors.$green_shadow;
+}
+.btn-cmd_ctrl_big
+{
+  height: 8.3vh;
+  line-height: 8.3vh;
+  border-radius: 40px;
+  width: 31vw;
+  font-family: fonts.$Salsa;
+  font-size: 5vh;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 2px 7px colors.$green_shadow;
+}
+
+.bottom-middle
+{
+  position: absolute;
+  top: 87vh;
+  left: 34vw;
+}
+.bottom-far-right
+{
+  position: absolute;
+  top: 87vh;
+  left: 66vw;
+}
+
+
+
+.main-section-commande
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.cmd-overview
+{
+  background-color: aquamarine;
 }

@@ -30,7 +30,6 @@ pub fn get_image(kind: &RawStr, img_name: &RawStr, ext: &RawStr) -> io::Result<N
     NamedFile::open(file_path)
 }
 
-#[allow(dead_code)]
 #[get("/js/get/<file_name>")]
 pub fn get_js(file_name: &RawStr) -> io::Result<NamedFile>
 {
