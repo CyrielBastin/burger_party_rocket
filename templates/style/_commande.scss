@@ -64,3 +64,108 @@
 {
   background-color: aquamarine;
 }
+
+//======================================================================================================================
+// Add Product page
+//======================================================================================================================
+
+.grid-container
+{
+  display: grid;
+  grid-template-rows: 10vh 14vh 50vh 16vh;
+  grid-template-columns: 2fr 2fr 1fr;
+}
+
+.btn-retour
+{
+  height: 9vh;
+  line-height: 9vh;
+  font-family: fonts.$Salsa;
+  font-size: 6vh;
+  width: 22vw;
+  text-align: center;
+  border-radius: 40px;
+  margin-left: 5vw;
+  cursor: pointer;
+
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.bur_drk-det
+{
+  grid-row-start: 3;
+  grid-column-start: 1;
+  text-align: center;
+
+  .bur_drk-cmd-img
+  {
+    width: 31vw;
+    max-width: 31vw;
+    height: 42vh;
+    max-height: 42vh;
+  }
+
+  .bur_drk-cmd-name
+  {
+    font-family: fonts.$Salsa;
+    font-size: 6vh;
+    line-height: 6vh;
+  }
+}
+
+.box-ctrl_qte
+{
+  grid-row-start: 3;
+  grid-column-start: 2;
+  align-self: end;
+  display: flex;
+  flex-direction: row;
+
+  .btn-minus, .btn-plus
+  {
+    width: 8vw;
+    margin: auto;
+    height: 13vh;
+    border-radius: 100%;
+    font-family: fonts.$Salsa;
+    font-size: 11vh;
+    line-height: 11vh;
+    text-align: center;
+  }
+  #bur_drk-qte
+  {
+    font-family: fonts.$Saira;
+    font-size: 8vh;
+    text-align: center;
+  }
+}
+
+.list-ingr
+{
+  grid-row-start: 2;
+  grid-row-end: span 3;
+  grid-column-start: 3;
+
+  width: 18.5vw;
+  overflow: auto;
+  background-color: aquamarine;
+}
+
+.btn-ok
+{
+  grid-row-start: 4;
+  grid-column-start: 2;
+
+  width: 33vw;
+  margin-top: 7vh;
+  margin-left: auto;
+  margin-right: auto;
+  height: 11vh;
+  font-family: fonts.$Salsa;
+  font-size: 8vh;
+  line-height: 11vh;
+  text-align: center;
+  border-radius: 40px;
+  cursor: pointer;
+}

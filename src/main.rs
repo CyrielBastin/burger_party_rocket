@@ -27,7 +27,9 @@ fn main()
             controller::infos_prod_controller::details_burger,
             controller::infos_prod_controller::details_boisson])
         .mount("/commande", routes![
-            controller::commande_controller::commande_new])
+            controller::commande_controller::commande_new,
+            controller::commande_controller::commande_add_burger,
+            controller::commande_controller::commande_add_boisson])
         .attach(Template::fairing())
         .launch();
 }

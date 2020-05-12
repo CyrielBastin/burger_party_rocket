@@ -13,7 +13,9 @@
             <div class="grid-bur_drk orange_background bur-pane">
                 {% for burger in burgers %}
                 <div class="burger-overview">
-                    <img class="burger-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
+                    <a href="/commande/product/add/burger/{{ burger.id }}">
+                        <img class="burger-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
+                    </a>
                     <div class="burger-name">{{ burger.nom }}</div>
                 </div>
                 {% endfor %}
@@ -21,7 +23,9 @@
             <div class="grid-bur_drk background-blue drk-pane" style="display: none;">
                 {% for boisson in boissons %}
                     <div class="boisson-overview">
-                        <img class="boisson-img" src="/public/image/get/boissons/{{ boisson.image }}/svg" alt="drink's image">
+                        <a href="/commande/product/add/boisson/{{ boisson.id }}">
+                            <img class="boisson-img" src="/public/image/get/boissons/{{ boisson.image }}/svg" alt="drink's image">
+                        </a>
                         <div class="boisson-name">{{ boisson.nom }}</div>
                     </div>
                 {% endfor %}

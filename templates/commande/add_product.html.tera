@@ -1,0 +1,30 @@
+{% extends '_base' %}
+
+{% block title %}Add :
+    {% if burger %}
+        {{ burger.nom }}
+    {% else %}
+        {{ boisson.nom }}
+    {% endif %}
+{% endblock title %}
+
+
+{% block body_background %}background-green_light{% endblock body_background %}
+{% block body %}
+    <div class="grid-container">
+        <div class="btn-retour green_dark background-orange_light">Retour</div>
+        <div class="bur_drk-det">
+            <img src="/public/image/get/{% if burger %}burgers/{{ burger.image }}/svg
+                                        {% else %}boissons/{{ boisson.image }}/svg
+                                        {% endif %}" alt="superb image" class="bur_drk-cmd-img">
+            <div class="bur_drk-cmd-name green_dark">{% if burger %}{{ burger.nom }}{% else %}{{ boisson.nom }}{% endif %}</div>
+        </div>
+        <div class="box-ctrl_qte">
+            <div class="btn-minus green_dark background-orange">-</div>
+            <div id="bur_drk-qte" class="black">0</div>
+            <div class="btn-plus green_dark background-orange">+</div>
+        </div>
+        <div class="list-ingr"></div>
+        <div class="btn-ok orange background-green">OK</div>
+    </div>
+{% endblock body %}
