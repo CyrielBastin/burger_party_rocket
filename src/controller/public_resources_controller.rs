@@ -1,6 +1,8 @@
 use std::io;
 use rocket::http::RawStr;
 use rocket::response::NamedFile;
+use serde_json;
+use crate::data_access::{DAOFactory, DAO};
 
 //==================================================================================================
 // All routes ares prefixed with /public
@@ -36,4 +38,14 @@ pub fn get_js(file_name: &RawStr) -> io::Result<NamedFile>
     let file_path = format!("./public/js/{}.js", file_name);
 
     NamedFile::open(file_path)
+}
+
+#[get("/json/fetch/ingredients-for-burger/<burger_id>")]
+pub fn get_ingredients(burger_id: u32) -> Option<String>
+{
+    let mut burger_repo = DAOFactory::create_dao_burger();
+    let burger = burger_repo.find_by_id(burger_id);
+    let ingredients = burger.get_ingredients();
+
+    serde_json::to_string(ingredients).ok()
 }

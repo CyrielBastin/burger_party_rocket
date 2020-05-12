@@ -27,4 +27,10 @@
         <div class="list-ingr"></div>
         <div class="btn-ok orange background-green">OK</div>
     </div>
+
+    {% if burger %}
+    <div id="id_burger" style="display: none;">{{ burger.id }}</div>
+    {% endif %}
+
+    <script src="/public/js/get/_add_product" defer></script>
 {% endblock body %}
