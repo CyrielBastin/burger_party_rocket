@@ -148,6 +148,7 @@
   grid-column-start: 3;
 
   width: 18.5vw;
+  max-height: 66vh;
   overflow: auto;
 
   .ingr_det
@@ -159,14 +160,20 @@
     text-align: center;
     font-size: 6vh;
     line-height: 6vh;
-    width: 15vw;
-    margin: 15px auto;
-  }
+    margin-top: 20px;
+    margin-bottom: 20px;
 
-  .list-ingr-img
-  {
-    margin-left: 10px;
-    border-radius: 40%;
+    .ingr_qte
+    {
+      width: 4vw;
+    }
+
+    .list-ingr-img
+    {
+      border-radius: 40%;
+      width: 7vw;
+      margin: auto;
+    }
   }
 }
 
