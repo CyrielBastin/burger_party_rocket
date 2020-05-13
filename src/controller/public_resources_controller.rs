@@ -40,7 +40,7 @@ pub fn get_js(file_name: &RawStr) -> io::Result<NamedFile>
     NamedFile::open(file_path)
 }
 
-#[get("/json/fetch/ingredients-for-burger/<burger_id>")]
+#[get("/from-json/fetch/ingredients-for-burger/<burger_id>")]
 pub fn get_ingredients(burger_id: u32) -> Option<String>
 {
     let mut burger_repo = DAOFactory::create_dao_burger();

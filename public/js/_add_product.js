@@ -3,10 +3,10 @@ const list_ingr = document.querySelector(".list-ingr")
 
 if (id_burger)
 {
-    fetch(`/public/json/fetch/ingredients-for-burger/${id_burger}`)
+    fetch(`/public/from-json/fetch/ingredients-for-burger/${id_burger}`)
         .then(data => data.json())
         .then(ingredient => gather_img_and_qte_into_array(ingredient))
-        .then(_ => add_img_and_qte_to_DOM(_))
+        .then(ingr_array => add_img_and_qte_to_DOM(ingr_array))
 }
 
 
