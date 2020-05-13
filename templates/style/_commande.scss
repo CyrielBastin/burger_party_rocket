@@ -149,7 +149,25 @@
 
   width: 18.5vw;
   overflow: auto;
-  background-color: aquamarine;
+
+  .ingr_det
+  {
+    color: colors.$white;
+    display: flex;
+    flex-direction: row;
+    font-family: fonts.$Salsa;
+    text-align: center;
+    font-size: 6vh;
+    line-height: 6vh;
+    width: 15vw;
+    margin: 15px auto;
+  }
+
+  .list-ingr-img
+  {
+    margin-left: 10px;
+    border-radius: 40%;
+  }
 }
 
 .btn-ok

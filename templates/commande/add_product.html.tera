@@ -24,7 +24,7 @@
             <div id="bur_drk-qte" class="black">0</div>
             <div class="btn-plus green_dark background-orange">+</div>
         </div>
-        <div class="list-ingr"></div>
+        {% if burger %}<div class="list-ingr background-green_dark"></div>{% endif %}
         <div class="btn-ok orange background-green">OK</div>
     </div>
 
