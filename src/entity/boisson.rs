@@ -1,6 +1,7 @@
 use super::Boisson;
 use crate::types::db_types::DrkFromDb;
 
+#[allow(dead_code)]
 impl Boisson
 {
     pub fn new() -> Self

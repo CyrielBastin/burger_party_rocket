@@ -3,6 +3,7 @@ const list_ingr = document.querySelector(".list-ingr")
 const btn_minus = document.querySelector(".btn-minus")
 const btn_plus = document.querySelector(".btn-plus")
 const div_quantite = document.getElementById("bur_drk-qte")
+const btn_send_qte = document.getElementById("send-qte")
 let quantite = div_quantite.innerText
 
 if (id_burger)
@@ -27,10 +28,9 @@ btn_plus.addEventListener("click", function(e) {
     div_quantite.innerText = quantite
 })
 
-/*
- * Change width to fixed width for panel qte_number
- *
- */
+btn_send_qte.addEventListener("click", function(e) {
+    e.preventDefault()
+})
 
 
 //====================================================================================================

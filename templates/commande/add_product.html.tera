@@ -12,7 +12,7 @@
 {% block body_background %}background-green_light{% endblock body_background %}
 {% block body %}
     <div class="grid-container">
-        <div class="btn-retour green_dark background-orange_light">Retour</div>
+        <a href="/commande/new"><div class="btn-retour green_dark background-orange_light">Retour</div></a>
         <div class="bur_drk-det">
             <img src="/public/image/get/{% if burger %}burgers/{{ burger.image }}/svg
                                         {% else %}boissons/{{ boisson.image }}/svg
@@ -21,16 +21,14 @@
         </div>
         <div class="box-ctrl_qte">
             <div class="btn-minus green_dark background-orange">-</div>
-            <div id="bur_drk-qte" class="black">0</div>
+            <div id="bur_drk-qte" class="black background-green_light">0</div>
             <div class="btn-plus green_dark background-orange">+</div>
         </div>
         {% if burger %}<div class="list-ingr background-green_dark"></div>{% endif %}
-        <div class="btn-ok orange background-green">OK</div>
+        <div id="send-qte" class="btn-ok orange background-green">OK</div>
     </div>
 
-    {% if burger %}
-    <div id="id_burger" style="display: none;">{{ burger.id }}</div>
-    {% endif %}
+    <div id="id_burger" style="display: none;">{% if burger %}{{ burger.id }}{% else %}{{ boisson.id }}{% endif %}</div>
 
     <script src="/public/js/get/_add_product" defer></script>
 {% endblock body %}
