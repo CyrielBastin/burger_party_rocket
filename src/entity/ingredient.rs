@@ -1,5 +1,5 @@
 use super::Ingredient;
-use std::fmt::{Display, Formatter, Result};
+use crate::types::db_types::IngrFromDb;
 
 #[allow(dead_code)]
 impl Ingredient
@@ -67,23 +67,9 @@ impl Ingredient
     }
 }
 
-impl Display for Ingredient
-{
-    fn fmt(&self, f: &mut Formatter<'_>) -> Result
-    {
-        write!(f, "Ingredient {{\n\tid: {},\n\tnom: {},\n\tdescription: {},\n\t\
-                prix: {},\n\tcalories: {},\n\timage: {}\n}}",
-        self.get_id(), self.get_nom(), self.get_description(), self.get_prix(),
-        self.get_calories(), self.get_image())
-    }
-}
-
-type DataFromDb = (Option<u32>, Option<String>, Option<String>, Option<f32>,
-                   Option<u16>, Option<u8>, Option<u8>, Option<String>, Option<u8>);
-
 impl Ingredient
 {
-    pub fn feed_from_db(&mut self, datas: DataFromDb)
+    pub fn feed_from_db(&mut self, datas: IngrFromDb)
     {
         self.set_id(match datas.0 {
             Some(x) => x,

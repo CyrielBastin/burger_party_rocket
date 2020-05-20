@@ -1,5 +1,5 @@
 use super::{Burger, Ingredient};
-use std::fmt::{Display, Formatter, Result};
+use crate::types::db_types::BurFromDb;
 
 #[allow(dead_code)]
 impl Burger
@@ -75,23 +75,9 @@ impl Burger
     }
 }
 
-impl Display for Burger
-{
-    fn fmt(&self, f: &mut Formatter<'_>) -> Result
-    {
-        write!(f, "Burger {{\n\tid: {},\n\tnom: {},\n\tdescription: {},\n\t\
-                prix: {},\n\trecette: {},\n\timage: {},\n\tquantite: {}\n}}",
-               self.get_id(), self.get_nom(), self.get_description(), self.get_prix(),
-               self.get_recette(), self.get_image(), self.get_quantite())
-    }
-}
-
-type DataFromDb = (Option<u32>, Option<String>, Option<f32>, Option<String>,
-                   Option<String>, Option<String>, Option<u8>);
-
 impl Burger
 {
-    pub fn feed_from_db(&mut self, datas: DataFromDb)
+    pub fn feed_from_db(&mut self, datas: BurFromDb)
     {
         self.set_id(match datas.0 {
             Some(x) => x,

@@ -1,5 +1,5 @@
 use super::{Commande, Burger, Boisson};
-use std::fmt::{Display, Formatter, Result};
+use crate::types::db_types::CmdFromDb;
 use chrono::Local;
 use regex::Regex;
 
@@ -61,18 +61,6 @@ impl Commande
     }
 }
 
-impl Display for Commande
-{
-    fn fmt(&self, f: &mut Formatter<'_>) -> Result
-    {
-        write!(f, "Commande {{\n\tid: {},\n\tterminal: {},\n\theure: {},\n\t\
-                paye: {}\n}}",
-               self.get_id(), self.get_terminal(), self.get_heure(), self.get_paye())
-    }
-}
-
-type DataFromDb = (Option<u32>, Option<u8>, Option<String>, Option<u8>, Option<u8>);
-
 #[allow(dead_code)]
 impl Commande {
     pub fn get_local_to_string() -> String
@@ -88,7 +76,7 @@ impl Commande {
         result
     }
 
-    pub fn feed_from_db(&mut self, datas: DataFromDb)
+    pub fn feed_from_db(&mut self, datas: CmdFromDb)
     {
         self.set_id(match datas.0 {
             Some(x) => x,

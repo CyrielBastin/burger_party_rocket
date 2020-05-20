@@ -7,6 +7,7 @@ use rocket_contrib::templates::Template;
 mod data_access;
 mod entity;
 mod types;
+mod cookie_handler;
 mod controller;
 
 

@@ -1,5 +1,9 @@
 const id_burger = document.getElementById("id_burger").innerText
 const list_ingr = document.querySelector(".list-ingr")
+const btn_minus = document.querySelector(".btn-minus")
+const btn_plus = document.querySelector(".btn-plus")
+const div_quantite = document.getElementById("bur_drk-qte")
+let quantite = div_quantite.innerText
 
 if (id_burger)
 {
@@ -8,6 +12,25 @@ if (id_burger)
         .then(ingredient => gather_img_and_qte_into_array(ingredient))
         .then(ingr_array => add_img_and_qte_to_DOM(ingr_array))
 }
+
+btn_minus.addEventListener("click", function(e) {
+    e.preventDefault()
+    quantite--
+    if (quantite < 0) quantite = 0
+    div_quantite.innerText = quantite
+})
+
+btn_plus.addEventListener("click", function(e) {
+    e.preventDefault()
+    quantite++
+    if (quantite > 99) quantite = 99
+    div_quantite.innerText = quantite
+})
+
+/*
+ * Change width to fixed width for panel qte_number
+ *
+ */
 
 
 //====================================================================================================
