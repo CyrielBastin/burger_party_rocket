@@ -33,6 +33,8 @@ fn main()
             controller::commande_controller::commande_new,
             controller::commande_controller::commande_add_burger,
             controller::commande_controller::commande_add_boisson])
+        .mount("/cookie", routes![
+            controller::cookie_controller::set_cookie])
         .attach(Template::fairing())
         .launch();
 }

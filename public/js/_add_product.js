@@ -2,9 +2,12 @@ const id_burger = document.getElementById("id_burger").innerText
 const list_ingr = document.querySelector(".list-ingr")
 const btn_minus = document.querySelector(".btn-minus")
 const btn_plus = document.querySelector(".btn-plus")
-const div_quantite = document.getElementById("bur_drk-qte")
+const inp_quantite = document.getElementById("bur_drk-qte")
+const form = document.getElementById("form-qte")
+const list_form_fields = document.querySelectorAll("#form-qte input")
 const btn_send_qte = document.getElementById("send-qte")
-let quantite = div_quantite.innerText
+let quantite = inp_quantite.value
+
 
 if (id_burger)
 {
@@ -18,18 +21,23 @@ btn_minus.addEventListener("click", function(e) {
     e.preventDefault()
     quantite--
     if (quantite < 0) quantite = 0
-    div_quantite.innerText = quantite
+    inp_quantite.setAttribute("value", quantite)
 })
 
 btn_plus.addEventListener("click", function(e) {
     e.preventDefault()
     quantite++
     if (quantite > 99) quantite = 99
-    div_quantite.innerText = quantite
+    inp_quantite.setAttribute("value", quantite)
 })
 
 btn_send_qte.addEventListener("click", function(e) {
     e.preventDefault()
+    for (const field of list_form_fields)
+    {
+        field.disabled = false
+    }
+    form.submit()
 })
 
 
