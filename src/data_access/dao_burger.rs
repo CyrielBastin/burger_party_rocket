@@ -1,9 +1,8 @@
 use crate::data_access::{DAO, DAOBurger};
 use crate::entity::{Burger, Ingredient};
+use crate::types::db_types::{IngrFromDb, BurFromDb};
 use mysql::{Row, from_row};
 use mysql::prelude::Queryable;
-use crate::types::db_types::{IngrFromDb, BurFromDb};
-
 
 
 impl DAO<Burger> for DAOBurger
@@ -47,6 +46,16 @@ impl DAO<Burger> for DAOBurger
         }
 
         list_burgers
+    }
+}
+
+impl DAOBurger
+{
+    pub fn find_id_all(&mut self) -> Vec<u32>
+    {
+        let query = "SELECT `id` FROM `burger`";
+
+        self.conn.exec(query, ()).unwrap()
     }
 }
 

@@ -45,3 +45,13 @@ impl DAO<Boisson> for DAOBoisson
         list_boissons
     }
 }
+
+impl DAOBoisson
+{
+    pub fn find_id_all(&mut self) -> Vec<u32>
+    {
+        let query = "SELECT `id` FROM `boisson`";
+
+        self.conn.exec(query, ()).unwrap()
+    }
+}

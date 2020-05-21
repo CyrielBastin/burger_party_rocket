@@ -9,7 +9,7 @@ mod entity;
 mod types;
 mod cookie_handler;
 mod controller;
-mod validator;
+mod validators;
 
 
 fn main()
