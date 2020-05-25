@@ -27,6 +27,18 @@ pub fn write_cmd_details(cmd_details: &CmdQte)
     }
 }
 
+/*
+ * This method empties the content of the files related to command_details in order
+ * to reset the command
+ */
+pub fn empty_command_details_content() -> std::io::Result<()>
+{
+    let _file = File::create("public/command_details/details_boisson.txt")?;
+    let _file = File::create("public/command_details/details_burger.txt")?;
+
+    Ok(())
+}
+
 //==================================================================================================
 // Burger's section
 //==================================================================================================

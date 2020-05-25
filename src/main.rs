@@ -30,6 +30,7 @@ fn main()
             controller::infos_prod_controller::details_boisson])
         .mount("/commande", routes![
             controller::commande_controller::commande_new,
+            controller::commande_controller::commande_reset,
             controller::commande_controller::commande_add_burger,
             controller::commande_controller::commande_add_boisson,
             controller::commande_controller::set_cmd_details])

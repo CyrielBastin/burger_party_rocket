@@ -51,10 +51,11 @@
 
     <div class="cmd-footer">
         <a href="/"><div class="btn-cmd_ctrl normal green_dark background-orange_light bottom-left">Menu Principal</div></a>
-        <a href="/"><div class="btn-cmd_ctrl normal white background-red bottom-middle">Reset Commande</div></a>
+        <a href="/commande/reset"><div class="btn-cmd_ctrl normal white background-red bottom-middle">Reset Commande</div></a>
         <a href="/"><div class="btn-cmd_ctrl_big green_dark background-orange bottom-far-right">Détails Commande</div></a>
     </div>
 
 
-    <script src="/public/js/get/_commande" defer></script>
+    <script src="/public/js/get/_command_fetch_details" defer></script>
+    <script src="/public/js/get/_command" defer></script>
 {% endblock body %}

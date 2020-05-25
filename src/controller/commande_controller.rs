@@ -4,7 +4,7 @@ use rocket::request::Form;
 use rocket::response::Redirect;
 use crate::data_access::{DAOFactory, DAO};
 use crate::validators::commande_validator::are_datas_valid;
-use crate::data_access::command_details_handler::write_cmd_details;
+use crate::data_access::command_details_handler::{write_cmd_details, empty_command_details_content};
 
 //==================================================================================================
 // All routes ares prefixed with /commande
@@ -23,6 +23,14 @@ pub fn commande_new() -> Template
     context.insert("boissons", &list_boissons);
 
     Template::render("commande/_commande_new", context)
+}
+
+#[get("/reset")]
+pub fn commande_reset() -> Redirect
+{
+    empty_command_details_content().unwrap();
+
+    Redirect::to(format!("/commande{}", uri!(commande_new)))
 }
 
 #[get("/product/add/burger/<id>")]
