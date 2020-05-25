@@ -97,13 +97,3 @@ impl Boisson
         });
     }
 }
-
-impl Boisson
-{
-    pub fn to_json_string(&self) -> String
-    {
-        format!("{{\"id\":{},\"nom\":{},\"description\":{},\"prix\":{},\"calories\":{},\"image\":{},\"quantite\":{}}}",
-        self.get_id(), self.get_nom(), self.get_description(), self.get_prix(), self.get_calories(), self.get_image(),
-        self.get_quantite())
-    }
-}
