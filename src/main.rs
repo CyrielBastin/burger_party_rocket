@@ -7,7 +7,6 @@ use rocket_contrib::templates::Template;
 mod data_access;
 mod entity;
 mod types;
-mod cookie_handler;
 mod controller;
 mod validators;
 
@@ -32,9 +31,8 @@ fn main()
         .mount("/commande", routes![
             controller::commande_controller::commande_new,
             controller::commande_controller::commande_add_burger,
-            controller::commande_controller::commande_add_boisson])
-        .mount("/cookie", routes![
-            controller::cookie_controller::set_cookie])
+            controller::commande_controller::commande_add_boisson,
+            controller::commande_controller::set_cmd_details])
         .attach(Template::fairing())
         .launch();
 }

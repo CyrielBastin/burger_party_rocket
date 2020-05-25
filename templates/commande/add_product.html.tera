@@ -21,7 +21,7 @@
         </div>
         <div class="box-ctrl_qte">
             <div class="btn-minus green_dark background-orange">-</div>
-            <form action="/cookie/set" method="post" id="form-qte">
+            <form action="/commande/details/set" method="post" id="form-qte">
                 <input id="bur_drk-qte" class="black background-green_light" name="quantite" value="0" disabled />
                 <input style="display: none;" name="kind" value="{% if burger %}burger{% else %}boisson{% endif %}" disabled />
                 <input style="display: none;" name="id" value="{% if burger %}{{ burger.id }}{% else %}{{ boisson.id }}{% endif %}" disabled/>

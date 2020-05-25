@@ -1,6 +1,10 @@
 use rocket_contrib::templates::Template;
 use rocket_contrib::templates::tera::Context;
+use rocket::request::Form;
+use rocket::response::Redirect;
 use crate::data_access::{DAOFactory, DAO};
+use crate::validators::commande_validator::are_datas_valid;
+use crate::data_access::command_details_handler::write_cmd_details;
 
 //==================================================================================================
 // All routes ares prefixed with /commande
@@ -43,4 +47,27 @@ pub fn commande_add_boisson(id: u32) -> Template
     context.insert("boisson", &boisson);
 
     Template::render("commande/add_product", context)
+}
+
+
+/*
+ * Structure to receive the kind (burger or drink), its `id` and `quantity` to add to the command
+ */
+#[derive(FromForm, Debug)]
+pub struct CmdQte
+{
+    pub kind: String,
+    pub id: u32,
+    pub quantite: u8
+}
+
+#[post("/details/set", data = "<cmd_det>")]
+pub fn set_cmd_details(cmd_det: Form<CmdQte>) -> Redirect
+{
+    if are_datas_valid(&cmd_det)
+    {
+        write_cmd_details(&cmd_det);
+    }
+
+    Redirect::to(uri!(super::homepage_controller::index))
 }

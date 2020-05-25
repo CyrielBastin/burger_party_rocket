@@ -105,3 +105,13 @@ impl Burger
         });
     }
 }
+
+impl Burger
+{
+    pub fn to_json_string(&self) -> String
+    {
+        format!("{{\"id\":{},\"nom\":\"{}\",\"description\":\"{}\",\"prix\":{},\"recette\":\"{}\",\"image\":\"{}\",\"quantite\":{}}}",
+                self.get_id(), self.get_nom(), self.get_description(), self.get_prix(), self.get_recette(), self.get_image(),
+                self.get_quantite())
+    }
+}

@@ -36,3 +36,5 @@ pub struct DAOBurger {
 pub struct DAOCommande {
     conn: PooledConn
 } mod dao_commande;
+
+pub mod command_details_handler;
