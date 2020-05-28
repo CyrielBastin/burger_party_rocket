@@ -6,40 +6,49 @@ const inp_quantite = document.getElementById("bur_drk-qte")
 const form = document.getElementById("form-qte")
 const list_form_fields = document.querySelectorAll("#form-qte input")
 const btn_send_qte = document.getElementById("send-qte")
-let quantite = inp_quantite.value
+let quantite = 0
 
 
 if (id_burger)
 {
-    fetch(`/public/from-json/fetch/ingredients-for-burger/${id_burger}`)
+    fetch(`/public/json-string/fetch/burger/${id_burger}`)
         .then(data => data.json())
+        .then(burger => {
+            quantite = burger.quantite
+            inp_quantite.value = quantite
+            return burger.ingredients
+        })
         .then(ingredient => gather_img_and_qte_into_array(ingredient))
         .then(ingr_array => add_img_and_qte_to_DOM(ingr_array))
+        .then(_ => add_event_listeners())
+        .catch(error => console.log(error))
 }
 
-btn_minus.addEventListener("click", function(e) {
-    e.preventDefault()
-    quantite--
-    if (quantite < 0) quantite = 0
-    inp_quantite.setAttribute("value", quantite)
-})
+function add_event_listeners()
+{
+    btn_minus.addEventListener("click", function(e) {
+        e.preventDefault()
+        quantite--
+        if (quantite < 0) quantite = 0
+        inp_quantite.value = quantite
+    })
 
-btn_plus.addEventListener("click", function(e) {
-    e.preventDefault()
-    quantite++
-    if (quantite > 99) quantite = 99
-    inp_quantite.setAttribute("value", quantite)
-})
+    btn_plus.addEventListener("click", function(e) {
+        e.preventDefault()
+        quantite++
+        if (quantite > 99) quantite = 99
+        inp_quantite.value = quantite
+    })
 
-btn_send_qte.addEventListener("click", function(e) {
-    e.preventDefault()
-    for (const field of list_form_fields)
-    {
-        field.disabled = false
-    }
-    form.submit()
-})
-
+    btn_send_qte.addEventListener("click", function(e) {
+        e.preventDefault()
+        for (const field of list_form_fields)
+        {
+            field.disabled = false
+        }
+        form.submit()
+    })
+}
 
 //====================================================================================================
 // Functions
@@ -86,3 +95,7 @@ function add_img_and_qte_to_DOM (ingr_array)
         list_ingr.appendChild(div_ingr_det)
     }
 }
+
+/*
+ * Problem with the EventListeners
+ */

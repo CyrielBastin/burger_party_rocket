@@ -13,7 +13,14 @@ use std::io::{Read, Write};
 
 pub fn write_cmd_details(cmd_details: &CmdQte)
 {
-    if cmd_details.quantite == 0 { return }
+    if cmd_details.quantite == 0
+    {
+        if cmd_details.kind == "burger" {
+            remove_burger(cmd_details.id);
+        }
+
+        return;
+    }
 
     if cmd_details.kind == "burger"
     {
@@ -27,14 +34,39 @@ pub fn write_cmd_details(cmd_details: &CmdQte)
     }
 }
 
+fn remove_burger(id: u32)
+{
+    let file_path = "public/command_details/details_burger.json";
+    let mut file = File::open(file_path).unwrap();
+    let mut file_content = String::new();
+    file.read_to_string(&mut file_content).unwrap();
+
+    if file_content.is_empty() {
+        return;
+    }
+    let list_burgers: Vec<Burger> = serde_json::from_str(&file_content).unwrap();
+    let mut new_list_burgers = Vec::new();
+
+    for b in list_burgers
+    {
+        if !(b.get_id() == id) {
+            new_list_burgers.push(b);
+        }
+    }
+    let mut file = File::create(file_path).unwrap();
+    if !new_list_burgers.is_empty() {
+        write!(file, "{}", serde_json::to_string_pretty(&new_list_burgers).unwrap()).unwrap();
+    }
+}
+
 /*
  * This method empties the content of the files related to command_details in order
  * to reset the command
  */
 pub fn empty_command_details_content() -> std::io::Result<()>
 {
-    let _file = File::create("public/command_details/details_boisson.txt")?;
-    let _file = File::create("public/command_details/details_burger.txt")?;
+    let _file = File::create("public/command_details/details_boisson.json")?;
+    let _file = File::create("public/command_details/details_burger.json")?;
 
     Ok(())
 }
@@ -54,7 +86,7 @@ fn find_burger_and_update_qte(cmd_det: &CmdQte, id: u32) -> Burger
 
 fn add_burger_to_file(burger: Burger) -> std::io::Result<()>
 {
-    let file_path = "public/command_details/details_burger.txt";
+    let file_path = "public/command_details/details_burger.json";
     let mut file = File::open(file_path)?;
 
     let mut content = String::new();
@@ -80,7 +112,7 @@ fn get_current_burger_file_content_and_update_qte(burger: Burger, file_content: 
     for b in &mut list_burgers
     {
         if b.get_id() == burger.get_id() {
-            b.set_quantite(b.get_quantite() + burger.get_quantite());
+            b.set_quantite(burger.get_quantite());
             found_element = true;
         }
     }
@@ -115,7 +147,7 @@ fn find_boisson_and_update_qte(cmd_det: &CmdQte, id: u32) -> Boisson
 
 fn add_boisson_to_file(boisson: Boisson) -> std::io::Result<()>
 {
-    let file_path = "public/command_details/details_boisson.txt";
+    let file_path = "public/command_details/details_boisson.json";
     let mut file = File::open(file_path)?;
 
     let mut content = String::new();
@@ -141,7 +173,7 @@ fn get_current_boisson_file_content_and_update_qte(boisson: Boisson, file_conten
     for b in &mut list_boissons
     {
         if b.get_id() == boisson.get_id() {
-            b.set_quantite(b.get_quantite() + boisson.get_quantite());
+            b.set_quantite(boisson.get_quantite());
             found_element = true;
         }
     }
@@ -160,3 +192,7 @@ fn write_new_boisson_content_to_file(list_boissons: Vec<Boisson>, file_path: &st
 
     Ok(())
 }
+
+/*
+ * if quantity == 0 remove this element
+ */

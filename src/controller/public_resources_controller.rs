@@ -3,6 +3,9 @@ use rocket::http::RawStr;
 use rocket::response::NamedFile;
 use serde_json;
 use crate::data_access::{DAOFactory, DAO};
+use std::fs::File;
+use std::io::Read;
+use crate::entity::Burger;
 
 //==================================================================================================
 // All routes ares prefixed with /public
@@ -40,12 +43,26 @@ pub fn get_js(file_name: &RawStr) -> io::Result<NamedFile>
     NamedFile::open(file_path)
 }
 
-#[get("/from-json/fetch/ingredients-for-burger/<burger_id>")]
-pub fn get_ingredients(burger_id: u32) -> Option<String>
+#[get("/json-string/fetch/burger/<burger_id>")]
+pub fn get_burger(burger_id: u32) -> Option<String>
 {
     let mut burger_repo = DAOFactory::create_dao_burger();
-    let burger = burger_repo.find_by_id(burger_id);
-    let ingredients = burger.get_ingredients();
+    let mut burger = burger_repo.find_by_id(burger_id);
 
-    serde_json::to_string(ingredients).ok()
+    let mut file = File::open("public/command_details/details_burger.json").unwrap();
+    let mut file_content = String::new();
+    file.read_to_string(&mut file_content).unwrap();
+
+    if !file_content.is_empty()
+    {
+        let mut list_burgers: Vec<Burger> = serde_json::from_str(&file_content).unwrap();
+        for b in &mut list_burgers
+        {
+            if b.get_id() == burger_id {
+                burger.set_quantite(b.get_quantite());
+            }
+        }
+    }
+
+    serde_json::to_string(&burger).ok()
 }
