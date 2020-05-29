@@ -77,5 +77,5 @@ pub fn set_cmd_details(cmd_det: Form<CmdQte>) -> Redirect
         write_cmd_details(&cmd_det);
     }
 
-    Redirect::to(uri!(super::homepage_controller::index))
+    Redirect::to(format!("/commande{}", uri!(commande_new)))
 }

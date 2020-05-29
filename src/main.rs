@@ -22,7 +22,8 @@ fn main()
             controller::public_resources_controller::get_font,
             controller::public_resources_controller::get_image,
             controller::public_resources_controller::get_js,
-            controller::public_resources_controller::get_burger])
+            controller::public_resources_controller::get_burger,
+            controller::public_resources_controller::get_boisson])
         .mount("/informations-produits", routes![
             controller::infos_prod_controller::infos_burgers,
             controller::infos_prod_controller::infos_boissons,

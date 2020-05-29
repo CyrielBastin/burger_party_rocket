@@ -1,4 +1,5 @@
-const id_burger = document.getElementById("id_burger").innerText
+const id_burger = document.getElementById("id_burger")
+const id_boisson = document.getElementById("id_boisson")
 const list_ingr = document.querySelector(".list-ingr")
 const btn_minus = document.querySelector(".btn-minus")
 const btn_plus = document.querySelector(".btn-plus")
@@ -11,7 +12,7 @@ let quantite = 0
 
 if (id_burger)
 {
-    fetch(`/public/json-string/fetch/burger/${id_burger}`)
+    fetch(`/public/json-string/fetch/burger/${id_burger.innerText}`)
         .then(data => data.json())
         .then(burger => {
             quantite = burger.quantite
@@ -20,6 +21,19 @@ if (id_burger)
         })
         .then(ingredient => gather_img_and_qte_into_array(ingredient))
         .then(ingr_array => add_img_and_qte_to_DOM(ingr_array))
+        .then(_ => add_event_listeners())
+        .catch(error => console.log(error))
+}
+else
+    // if we don't have `id` for burger, we have `id` for boisson
+{
+    fetch(`/public/json-string/fetch/boisson/${id_boisson.innerText}`)
+        .then(data => data.json())
+        .then(boisson => {
+            quantite = boisson.quantite
+            inp_quantite.value = quantite
+            return boisson
+        })
         .then(_ => add_event_listeners())
         .catch(error => console.log(error))
 }
@@ -95,7 +109,3 @@ function add_img_and_qte_to_DOM (ingr_array)
         list_ingr.appendChild(div_ingr_det)
     }
 }
-
-/*
- * Problem with the EventListeners
- */

@@ -1,6 +1,12 @@
 /*
- * Used to retrieve, and setup command details from `public/command_details/...txt`
+ * Used to retrieve, and setup command details from `public/command_details/...json`
  * to further convert them to JSON.
+ *
+ * =================================================================================================
+ *
+ * It's working BUT it's GARBAGE
+ * Will refactor this file and DAOFactory with <Generics> IF I have time
+ * First focus on finishing the minimum requirements for the project !
  */
 
 use crate::controller::commande_controller::CmdQte;
@@ -17,6 +23,9 @@ pub fn write_cmd_details(cmd_details: &CmdQte)
     {
         if cmd_details.kind == "burger" {
             remove_burger(cmd_details.id);
+        }
+        else {
+            remove_boisson(cmd_details.id);
         }
 
         return;
@@ -56,6 +65,31 @@ fn remove_burger(id: u32)
     let mut file = File::create(file_path).unwrap();
     if !new_list_burgers.is_empty() {
         write!(file, "{}", serde_json::to_string_pretty(&new_list_burgers).unwrap()).unwrap();
+    }
+}
+
+fn remove_boisson(id: u32)
+{
+    let file_path = "public/command_details/details_boisson.json";
+    let mut file = File::open(file_path).unwrap();
+    let mut file_content = String::new();
+    file.read_to_string(&mut file_content).unwrap();
+
+    if file_content.is_empty() {
+        return;
+    }
+    let list_boissons: Vec<Boisson> = serde_json::from_str(&file_content).unwrap();
+    let mut new_list_boissons = Vec::new();
+
+    for b in list_boissons
+    {
+        if !(b.get_id() == id) {
+            new_list_boissons.push(b);
+        }
+    }
+    let mut file = File::create(file_path).unwrap();
+    if !new_list_boissons.is_empty() {
+        write!(file, "{}", serde_json::to_string_pretty(&new_list_boissons).unwrap()).unwrap();
     }
 }
 
@@ -192,7 +226,3 @@ fn write_new_boisson_content_to_file(list_boissons: Vec<Boisson>, file_path: &st
 
     Ok(())
 }
-
-/*
- * if quantity == 0 remove this element
- */
