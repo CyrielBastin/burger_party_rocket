@@ -27,14 +27,14 @@ mod dao_factory;
 pub struct DAOIngredient {
     conn: PooledConn
 } mod dao_ingredient;
-pub struct DAOBoisson {
+pub struct DAODrink {
     conn: PooledConn
-} mod dao_boisson;
+} mod dao_drink;
 pub struct DAOBurger {
     conn: PooledConn
 } mod dao_burger;
-pub struct DAOCommande {
+pub struct DAOCommand {
     conn: PooledConn
-} mod dao_commande;
+} mod dao_command;
 
 pub mod command_details_handler;

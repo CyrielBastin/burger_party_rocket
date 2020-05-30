@@ -1,4 +1,4 @@
--- The 2 files above (details_(boisson/burger).json) are necessary for the App
+-- The 2 files above (details_burgers.json -- details_drinks.json) are necessary for the App
 
 --
 -- DO NOT ERASE THEM !!!!!!!!!!!!!!!!!

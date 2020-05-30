@@ -8,12 +8,12 @@ impl Burger
     {
         Burger {
             id: 0,
-            nom: "".to_string(),
+            name: "".to_string(),
             description: "".to_string(),
-            prix: 0.0,
-            recette: "".to_string(),
+            price: 0.0,
+            recipe: "".to_string(),
             image: "".to_string(),
-            quantite: 0,
+            quantity: 0,
             ingredients: Vec::new()
         }
     }
@@ -25,11 +25,11 @@ impl Burger
         self.id = id;
     }
 
-    pub fn get_nom(&self) -> &str {
-        &self.nom[..]
+    pub fn get_name(&self) -> &str {
+        &self.name[..]
     }
-    pub fn set_nom(&mut self, nom: &str) {
-        self.nom = nom.to_string();
+    pub fn set_name(&mut self, name: &str) {
+        self.name = name.to_string();
     }
 
     pub fn get_description(&self) -> &str {
@@ -39,18 +39,18 @@ impl Burger
         self.description = description.to_string();
     }
 
-    pub fn get_prix(&self) -> f32 {
-        self.prix
+    pub fn get_price(&self) -> f32 {
+        self.price
     }
-    pub fn set_prix(&mut self, prix: f32) {
-        self.prix = prix;
+    pub fn set_price(&mut self, price: f32) {
+        self.price = price;
     }
 
-    pub fn get_recette(&self) -> &str {
-        &self.recette[..]
+    pub fn get_recipe(&self) -> &str {
+        &self.recipe[..]
     }
-    pub fn set_recette(&mut self, recette: &str) {
-        self.recette = recette.to_string();
+    pub fn set_recipe(&mut self, recipe: &str) {
+        self.recipe = recipe.to_string();
     }
 
     pub fn get_image(&self) -> &str {
@@ -60,11 +60,11 @@ impl Burger
         self.image = image.to_string();
     }
 
-    pub fn get_quantite(&self) -> u8 {
-        self.quantite
+    pub fn get_quantity(&self) -> u8 {
+        self.quantity
     }
-    pub fn set_quantite(&mut self, quantite: u8) {
-        self.quantite = quantite;
+    pub fn set_quantity(&mut self, quantity: u8) {
+        self.quantity = quantity;
     }
 
     pub fn get_ingredients(&self) -> &Vec<Ingredient> {
@@ -83,7 +83,7 @@ impl Burger
             Some(x) => x,
             None => 0
         });
-        self.set_nom(match &datas.1 {
+        self.set_name(match &datas.1 {
             Some(x) => x,
             None => ""
         });
@@ -91,11 +91,11 @@ impl Burger
             Some(x) => x,
             None => ""
         });
-        self.set_prix(match datas.2 {
+        self.set_price(match datas.2 {
             Some(x) => x,
             None => 0.0
         });
-        self.set_recette(match &datas.4 {
+        self.set_recipe(match &datas.4 {
             Some(x) => x,
             None => ""
         });

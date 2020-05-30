@@ -1,4 +1,4 @@
-{% extends 'infos_produits/infos_produits' %}
+{% extends 'infos_products/infos_products' %}
 
 {% block h1 %}Infos Burgers{% endblock h1 %}
 
@@ -7,10 +7,10 @@
 {% block burger_drink %}
     {% for burger in burgers %}
         <div class="burger-overview">
-            <a href="/informations-produits/burgers/burger/{{ burger.id }}">
+            <a href="/informations-products/burgers/burger/{{ burger.id }}">
                 <img class="burger-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
             </a>
-            <div class="burger-name">{{ burger.nom }}</div>
+            <div class="burger-name">{{ burger.name }}</div>
         </div>
     {% endfor %}
 {% endblock burger_drink %}

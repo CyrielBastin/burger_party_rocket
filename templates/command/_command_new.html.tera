@@ -8,25 +8,25 @@
         <a><div class="tab-drink background-blue">Boissons</div></a>
     </div>
 
-    <div class="main-section-commande">
+    <div class="main-section-command">
         <div class="listing-bur_drk">
             <div class="grid-bur_drk orange_background bur-pane">
                 {% for burger in burgers %}
                 <div class="burger-overview">
-                    <a href="/commande/product/add/burger/{{ burger.id }}">
+                    <a href="/command/product/add/burger/{{ burger.id }}">
                         <img class="burger-img" src="/public/image/get/burgers/{{ burger.image }}/svg" alt="burger's image">
                     </a>
-                    <div class="burger-name">{{ burger.nom }}</div>
+                    <div class="burger-name">{{ burger.name }}</div>
                 </div>
                 {% endfor %}
             </div>
             <div class="grid-bur_drk background-blue drk-pane" style="display: none;">
-                {% for boisson in boissons %}
-                    <div class="boisson-overview">
-                        <a href="/commande/product/add/boisson/{{ boisson.id }}">
-                            <img class="boisson-img" src="/public/image/get/boissons/{{ boisson.image }}/svg" alt="drink's image">
+                {% for drink in drinks %}
+                    <div class="drink-overview">
+                        <a href="/command/product/add/drink/{{ drink.id }}">
+                            <img class="drink-img" src="/public/image/get/drinks/{{ drink.image }}/svg" alt="drink's image">
                         </a>
-                        <div class="boisson-name">{{ boisson.nom }}</div>
+                        <div class="drink-name">{{ drink.name }}</div>
                     </div>
                 {% endfor %}
             </div>
@@ -34,7 +34,7 @@
 
         <div class="cmd-overview">
             <div class="cmd-list">
-                <div class="cmd-qte"></div>
+                <div class="cmd-qty"></div>
                 <div class="cmd_mini-det">
                     <div class="bur-section">
                         <div class="bur_mini-img"></div>
@@ -51,7 +51,7 @@
 
     <div class="cmd-footer">
         <a href="/"><div class="btn-cmd_ctrl normal green_dark background-orange_light bottom-left">Menu Principal</div></a>
-        <a href="/commande/reset"><div class="btn-cmd_ctrl normal white background-red bottom-middle">Reset Commande</div></a>
+        <a href="/command/reset"><div class="btn-cmd_ctrl normal white background-red bottom-middle">Reset Commande</div></a>
         <a href="/"><div class="btn-cmd_ctrl_big green_dark background-orange bottom-far-right">Détails Commande</div></a>
     </div>
 

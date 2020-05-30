@@ -1,5 +1,5 @@
 use super::DAOFactory;
-use crate::data_access::{DbConnection, DAOIngredient, DAOBoisson, DAOBurger, DAOCommande};
+use crate::data_access::{DbConnection, DAOIngredient, DAODrink, DAOBurger, DAOCommand};
 
 #[allow(dead_code)]
 impl DAOFactory
@@ -9,8 +9,8 @@ impl DAOFactory
             conn: DbConnection::new()
         }
     }
-    pub fn create_dao_boisson() -> DAOBoisson {
-        DAOBoisson {
+    pub fn create_dao_drink() -> DAODrink {
+        DAODrink {
             conn: DbConnection::new()
         }
     }
@@ -19,8 +19,8 @@ impl DAOFactory
             conn: DbConnection::new()
         }
     }
-    pub fn create_dao_commande() -> DAOCommande {
-        DAOCommande {
+    pub fn create_dao_command() -> DAOCommand {
+        DAOCommand {
             conn: DbConnection::new()
         }
     }

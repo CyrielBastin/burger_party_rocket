@@ -8,12 +8,12 @@ impl Ingredient
     {
         Ingredient {
             id: 0,
-            nom: "".to_string(),
+            name: "".to_string(),
             description: "".to_string(),
-            prix: 0.0,
+            price: 0.0,
             calories: 0,
             image: "".to_string(),
-            quantite: 0
+            quantity: 0
         }
     }
 
@@ -24,11 +24,11 @@ impl Ingredient
         self.id = id;
     }
 
-    pub fn get_nom(&self) -> &str {
-        &self.nom[..]
+    pub fn get_name(&self) -> &str {
+        &self.name[..]
     }
-    pub fn set_nom(&mut self, nom: &str) {
-        self.nom = nom.to_string();
+    pub fn set_name(&mut self, name: &str) {
+        self.name = name.to_string();
     }
 
     pub fn get_description(&self) -> &str {
@@ -38,11 +38,11 @@ impl Ingredient
         self.description = description.to_string();
     }
 
-    pub fn get_prix(&self) -> f32 {
-        self.prix
+    pub fn get_price(&self) -> f32 {
+        self.price
     }
-    pub fn set_prix(&mut self, prix: f32) {
-        self.prix = prix;
+    pub fn set_price(&mut self, price: f32) {
+        self.price = price;
     }
 
     pub fn get_calories(&self) -> u16 {
@@ -59,11 +59,11 @@ impl Ingredient
         self.image = image.to_string();
     }
 
-    pub fn get_quantite(&self) -> u8 {
-        self.quantite
+    pub fn get_quantity(&self) -> u8 {
+        self.quantity
     }
-    pub fn set_quantite(&mut self, quantite: u8) {
-        self.quantite = quantite;
+    pub fn set_quantity(&mut self, quantity: u8) {
+        self.quantity = quantity;
     }
 }
 
@@ -75,7 +75,7 @@ impl Ingredient
             Some(x) => x,
             None => 0
         });
-        self.set_nom(match &datas.1 {
+        self.set_name(match &datas.1 {
             Some(x) => x,
             None => ""
         });
@@ -83,7 +83,7 @@ impl Ingredient
             Some(x) => x,
             None => ""
         });
-        self.set_prix(match datas.3 {
+        self.set_price(match datas.3 {
             Some(x) => x,
             None => 0.0
         });
@@ -95,7 +95,7 @@ impl Ingredient
             Some(x) => x,
             None => ""
         });
-        self.set_quantite(match datas.8 {
+        self.set_quantity(match datas.8 {
             Some(x) => x,
             None => 0
         })

@@ -9,10 +9,10 @@ pub fn index() -> Template
     Template::render("index", context)
 }
 
-#[get("/qui-sommes-nous")]
-pub fn qui_sommes_nous() -> Template
+#[get("/who-are-we")]
+pub fn who_are_we() -> Template
 {
     let context = Context::new();
 
-    Template::render("qui_sommes_nous", context)
+    Template::render("who_are_we", context)
 }

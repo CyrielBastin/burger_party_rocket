@@ -1,52 +1,52 @@
-use crate::data_access::{DAO, DAOBoisson};
-use crate::entity::Boisson;
+use crate::data_access::{DAO, DAODrink};
+use crate::entity::Drink;
 use mysql::{Row, from_row};
 use mysql::prelude::Queryable;
 use crate::types::db_types::DrkFromDb;
 
 
-impl DAO<Boisson> for DAOBoisson
+impl DAO<Drink> for DAODrink
 {
-    fn create(&self, _obj: Boisson) -> bool {
+    fn create(&self, _obj: Drink) -> bool {
         false
     }
 
-    fn update(&self, _obj: Boisson) -> bool {
+    fn update(&self, _obj: Drink) -> bool {
         false
     }
 
-    fn delete(&self, _obj: Boisson) -> bool {
+    fn delete(&self, _obj: Drink) -> bool {
         false
     }
 
-    fn find_by_id(&mut self, id: u32) -> Boisson
+    fn find_by_id(&mut self, id: u32) -> Drink
     {
         let query = "SELECT *, 0 AS quantite FROM `boisson` WHERE `id` = ?";
         let result: Row = self.conn.exec_first(query, (id,)).unwrap().unwrap();
         let datas = from_row::<DrkFromDb>(result);
-        let mut boisson = Boisson::new();
-        boisson.feed_from_db(datas);
+        let mut drink = Drink::new();
+        drink.feed_from_db(datas);
 
-        boisson
+        drink
     }
 
-    fn find_all(&mut self) -> Vec<Boisson>
+    fn find_all(&mut self) -> Vec<Drink>
     {
         let query = "SELECT *, 0 AS quantite FROM `boisson`";
         let result: Vec<Row> = self.conn.exec(query, ()).unwrap();
-        let mut list_boissons = Vec::new();
+        let mut list_drinks = Vec::new();
         for row in result {
             let datas = from_row::<DrkFromDb>(row);
-            let mut boisson = Boisson::new();
-            boisson.feed_from_db(datas);
-            list_boissons.push(boisson);
+            let mut drink = Drink::new();
+            drink.feed_from_db(datas);
+            list_drinks.push(drink);
         }
 
-        list_boissons
+        list_drinks
     }
 }
 
-impl DAOBoisson
+impl DAODrink
 {
     pub fn find_id_all(&mut self) -> Vec<u32>
     {

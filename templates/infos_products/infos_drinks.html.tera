@@ -1,0 +1,16 @@
+{% extends 'infos_products/infos_products' %}
+
+{% block h1 %}Infos Boissons{% endblock h1 %}
+
+
+{% block color %}background-blue{% endblock color %}
+{% block burger_drink %}
+    {% for drink in drinks %}
+        <div class="drink-overview">
+            <a href="/informations-products/drinks/drink/{{ drink.id }}">
+                <img class="drink-img" src="/public/image/get/drinks/{{ drink.image }}/svg" alt="Drink's image">
+            </a>
+            <div class="drink-name">{{ drink.name }}</div>
+        </div>
+    {% endfor %}
+{% endblock burger_drink %}

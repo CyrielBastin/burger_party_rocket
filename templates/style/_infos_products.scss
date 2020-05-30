@@ -40,7 +40,7 @@ a
   overflow: auto;
 }
 
-.burger-overview, .boisson-overview
+.burger-overview, .drink-overview
 {
   display: block;
   justify-self: center;
@@ -48,14 +48,14 @@ a
   margin-bottom: 10px;
 }
 
-.burger-img, .boisson-img
+.burger-img, .drink-img
 {
   width: 16vw;
   height: 22vh;
   max-width: 16vw;
   max-height: 22vh;
 }
-.burger-name, .boisson-name
+.burger-name, .drink-name
 {
   max-width: 16vw;
   font-size: 4vh;
@@ -65,7 +65,7 @@ a
 }
 
 //====================================================================================================
-// Details Burgers et Boissons
+// Details Burgers and Drinks
 //====================================================================================================
 
 .grid-burger
@@ -134,7 +134,7 @@ a
   grid-column-end: span 2;
 }
 
-.bur_drk-prix
+.bur_drk-price
 {
   grid-row-start: 3;
   grid-column-start: 2;
@@ -146,7 +146,7 @@ a
   grid-column-start: 3;
 }
 
-.bur-recette
+.bur-recipe
 {
   grid-row-start: 4;
   grid-column-start: 1;

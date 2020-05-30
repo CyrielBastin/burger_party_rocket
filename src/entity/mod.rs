@@ -4,50 +4,50 @@ use serde::{Serialize, Deserialize};
 pub struct Ingredient
 {
     id: u32,
-    nom: String,
+    name: String,
     description: String,
-    prix: f32,
+    price: f32,
     calories: u16,
     image: String,
-    quantite: u8
+    quantity: u8
 }
 mod ingredient;
 
 #[derive(Serialize, Deserialize, Debug)]
-pub struct Boisson
+pub struct Drink
 {
     id: u32,
-    nom: String,
+    name: String,
     description: String,
-    prix: f32,
+    price: f32,
     calories: u16,
     image: String,
-    quantite: u8
+    quantity: u8
 }
-mod boisson;
+mod drink;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Burger
 {
     id: u32,
-    nom: String,
+    name: String,
     description: String,
-    prix: f32,
-    recette: String,
+    price: f32,
+    recipe: String,
     image: String,
-    quantite: u8,
+    quantity: u8,
     ingredients: Vec<Ingredient>
 }
 mod burger;
 
 #[derive(Serialize, Deserialize, Debug)]
-pub struct Commande
+pub struct Command
 {
     id: u32,
     terminal: u8,
-    heure_complete: String,
-    paye: bool,
+    date_time: String,
+    payed: bool,
     burgers: Vec<Burger>,
-    boissons: Vec<Boisson>
+    drinks: Vec<Drink>
 }
-mod commande;
+mod command;

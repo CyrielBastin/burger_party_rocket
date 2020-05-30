@@ -6,13 +6,13 @@
 
 {% block body %}
 	<div id="burger_party">
-		<img id="burger_party-logo" src="public/image/get/autres/logo/svg" alt="image_logo">
+		<img id="burger_party-logo" src="public/image/get/others/logo/svg" alt="image_logo">
 		<p id="burger_party-txt">BURGER PARTY</p>
 	</div>
 
 	<div id="menu_client">
-		<a href="/commande/new"><div id="nouvelle_commande" class="btn-control big background-orange">Nouvelle Commande</div></a>
-        <a href="/informations-produits/burgers"><div id="informations_produits" class="btn-control normal background-orange_light">Informations Produits</div></a>
-		<a href="/qui-sommes-nous"><div id="qui_sommes_nous" class="btn-control normal background-orange_light">Qui Sommes-Nous ?</div></a>
+		<a href="/command/new"><div id="new-command" class="btn-control big background-orange">Nouvelle Commande</div></a>
+        <a href="/informations-products/burgers"><div id="informations_products" class="btn-control normal background-orange_light">Informations Produits</div></a>
+		<a href="/who-are-we"><div id="who-are-we" class="btn-control normal background-orange_light">Qui Sommes-Nous ?</div></a>
 	</div>
 {% endblock body %}

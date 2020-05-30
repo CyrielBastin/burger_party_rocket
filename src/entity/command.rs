@@ -1,20 +1,20 @@
-use super::{Commande, Burger, Boisson};
+use super::{Command, Burger, Drink};
 use crate::types::db_types::CmdFromDb;
 use chrono::Local;
 use regex::Regex;
 
 #[allow(dead_code)]
-impl Commande
+impl Command
 {
     pub fn new() -> Self
     {
-        Commande {
+        Command {
             id: 0,
             terminal: 0,
-            heure_complete: "".to_string(),
-            paye: false,
+            date_time: "".to_string(),
+            payed: false,
             burgers: Vec::new(),
-            boissons: Vec::new()
+            drinks: Vec::new()
         }
     }
 
@@ -32,18 +32,18 @@ impl Commande
         self.terminal = terminal;
     }
 
-    pub fn get_heure(&self) -> &str {
-        &self.heure_complete[..]
+    pub fn get_date_time(&self) -> &str {
+        &self.date_time[..]
     }
-    pub fn set_heure(&mut self, heure: &str) {
-        self.heure_complete = heure.to_string();
+    pub fn set_date_time(&mut self, date_time: &str) {
+        self.date_time = date_time.to_string();
     }
 
-    pub fn get_paye(&self) -> bool {
-        self.paye
+    pub fn get_payed(&self) -> bool {
+        self.payed
     }
-    pub fn set_paye(&mut self, paye: bool) {
-        self.paye = paye;
+    pub fn set_payed(&mut self, payed: bool) {
+        self.payed = payed;
     }
 
     pub fn get_burgers(&self) -> &Vec<Burger> {
@@ -53,16 +53,16 @@ impl Commande
         self.burgers = burgers;
     }
 
-    pub fn get_boissons(&self) -> &Vec<Boisson> {
-        &self.boissons
+    pub fn get_drinks(&self) -> &Vec<Drink> {
+        &self.drinks
     }
-    pub fn set_boissons(&mut self, boissons: Vec<Boisson>) {
-        self.boissons = boissons;
+    pub fn set_drinks(&mut self, drinks: Vec<Drink>) {
+        self.drinks = drinks;
     }
 }
 
 #[allow(dead_code)]
-impl Commande {
+impl Command {
     pub fn get_local_to_string() -> String
     {
         let local = Local::now();
@@ -82,7 +82,7 @@ impl Commande {
             Some(x) => x,
             None => 0
         });
-        self.set_heure(match &datas.2 {
+        self.set_date_time(match &datas.2 {
             Some(x) => x,
             None => ""
         });
@@ -90,7 +90,7 @@ impl Commande {
             Some(x) => x,
             None => 0
         });
-        self.set_paye(match datas.4 {
+        self.set_payed(match datas.4 {
             Some(x) => if x == 0 {false} else {true},
             None => false
         });

@@ -3,7 +3,7 @@ use rocket_contrib::templates::tera::Context;
 use crate::data_access::{DAOFactory, DAO};
 
 //==================================================================================================
-// All routes ares prefixed with /informations-produits
+// All routes ares prefixed with /informations-products
 //==================================================================================================
 
 #[get("/burgers")]
@@ -14,18 +14,18 @@ pub fn infos_burgers() -> Template
     let mut context = Context::new();
     context.insert("burgers", &list_burgers);
 
-    Template::render("infos_produits/infos_burgers", context)
+    Template::render("infos_products/infos_burgers", context)
 }
 
-#[get("/boissons")]
-pub fn infos_boissons() -> Template
+#[get("/drinks")]
+pub fn infos_drinks() -> Template
 {
-    let mut boisson_repo = DAOFactory::create_dao_boisson();
-    let list_boissons = boisson_repo.find_all();
+    let mut drink_repo = DAOFactory::create_dao_drink();
+    let list_drinks = drink_repo.find_all();
     let mut context = Context::new();
-    context.insert("boissons", &list_boissons);
+    context.insert("drinks", &list_drinks);
 
-    Template::render("infos_produits/infos_boissons", context)
+    Template::render("infos_products/infos_drinks", context)
 }
 
 #[get("/burgers/burger/<id>")]
@@ -38,22 +38,22 @@ pub fn details_burger(id: u32) -> Template
     let mut calories: u16 = 0;
     for ing in burger.get_ingredients()
     {
-        calories += (*ing).get_calories() * (*ing).get_quantite() as u16;
+        calories += (*ing).get_calories() * (*ing).get_quantity() as u16;
     }
 
     context.insert("burger", &burger);
     context.insert("calories", &calories);
 
-    Template::render("infos_produits/details_burgers", context)
+    Template::render("infos_products/details_burgers", context)
 }
 
-#[get("/boissons/boisson/<id>")]
-pub fn details_boisson(id: u32) -> Template
+#[get("/drinks/drink/<id>")]
+pub fn details_drink(id: u32) -> Template
 {
-    let mut boisson_repo = DAOFactory::create_dao_boisson();
-    let boisson = boisson_repo.find_by_id(id);
+    let mut drink_repo = DAOFactory::create_dao_drink();
+    let drink = drink_repo.find_by_id(id);
     let mut context = Context::new();
-    context.insert("boisson", &boisson);
+    context.insert("drink", &drink);
 
-    Template::render("infos_produits/details_boissons", context)
+    Template::render("infos_products/details_drinks", context)
 }
