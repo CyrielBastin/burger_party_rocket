@@ -63,11 +63,20 @@
 
 .cmd-overview
 {
-  background-color: aquamarine;
   width: 20vw;
   margin-left: 2vw;
   height: 70vh;
   overflow: auto;
+
+  .bur-section
+  {
+    background-color: colors.$orange_background;
+  }
+
+  .drk-section
+  {
+    background-color: colors.$blue;
+  }
 }
 
 //======================================================================================================================

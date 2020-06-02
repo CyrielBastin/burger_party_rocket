@@ -1,5 +1,11 @@
 @font-face
 {
+    font-family: Pacifico;
+    src: url('../../../public/font/get/Pacifico-Regular/ttf');
+}
+
+@font-face
+{
     font-family: Righteous;
     src: url('../../../public/font/get/Righteous-Regular/ttf');
 }
@@ -22,6 +28,7 @@
     src: url('../../../public/font/get/Salsa-Regular/ttf');
 }
 
+$Pacifico: Pacifico;
 $Righteous: Righteous;
 $Roboto: Roboto;
 $Saira: Saira;

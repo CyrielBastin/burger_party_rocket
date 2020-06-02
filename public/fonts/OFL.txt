@@ -1,5 +1,4 @@
-Copyright (c) 2011 by John Vargas Beltrán (john.vargasbeltran@gmail.com),
-with Reserved Font Name Salsa.
+Copyright 2018 The Pacifico Project Authors (https://github.com/googlefonts/Pacifico)
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
