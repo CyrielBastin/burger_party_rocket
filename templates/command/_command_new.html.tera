@@ -34,13 +34,14 @@
 
         <div class="cmd-overview">
             <div class="cmd-list">
-                <div class="cmd-qty"></div>
                 <div class="cmd_mini-det">
                     <div class="bur-section">
+                        <div class="item-qty"></div>
                         <div class="bur_mini-img"></div>
                         <div class="bur_mini-name"></div>
                     </div>
                     <div class="drk-section">
+                        <div class="item-qty"></div>
                         <div class="drk_mini-img"></div>
                         <div class="drk_mini-name"></div>
                     </div>

@@ -4,7 +4,7 @@ use rocket::request::Form;
 use rocket::response::Redirect;
 use crate::data_access::{DAOFactory, DAO};
 use crate::validators::command_validator::are_datas_valid;
-use crate::data_access::command_details_handler::{write_cmd_details, empty_command_details_content};
+use crate::data_access::command_details_handler::{write_cmd_details, empty_command_details_content, fetch_cmd_burgers, fetch_cmd_drinks};
 
 //==================================================================================================
 // All routes ares prefixed with /command
@@ -78,4 +78,20 @@ pub fn set_cmd_details(cmd_det: Form<CmdQty>) -> Redirect
     }
 
     Redirect::to(format!("/command{}", uri!(command_new)))
+}
+
+//==================================================================================================
+// Section to fetch burgers and drinks from command
+//==================================================================================================
+
+#[get("/fetch/burgers")]
+pub fn fetch_burgers() -> Option<String>
+{
+    fetch_cmd_burgers()
+}
+
+#[get("/fetch/drinks")]
+pub fn fetch_drinks() -> Option<String>
+{
+    fetch_cmd_drinks()
 }

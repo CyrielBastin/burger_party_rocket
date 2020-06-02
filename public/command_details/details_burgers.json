@@ -1,0 +1,65 @@
+[{
+  "id": 1,
+  "name": "Hamburger",
+  "description": "Hamburger classique mais indémodable avec une viande élevée en Belgique.",
+  "price": 2.0,
+  "recipe": "Burger composé de: 1 pain blanc normal, 1 steak haché pur boeuf 50g, cornichons, sauce ketchup, sauce moutarde et des oignons coupés en dés.",
+  "image": "hamburger",
+  "quantity": 3,
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "Pain blanc - normal",
+      "description": "Pain blanc nourissant se mariant parfaitement avec des ingrédients judicieusement sélectionnés par nos experts du goût afin de réaliser des recettes délicieusement divine.",
+      "price": 0.25,
+      "calories": 5,
+      "image": "pain_dessus+pain_dessous",
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "name": "Steak haché pur boeuf - 50g",
+      "description": "Viande pur boeuf, provenant d'éleveurs belges, cuite au grill à la perfection. Ce goût de la viande inimitable a fait de notre enseigne un leader national et reconnu pour sa qualité et son respect des différents acteurs qui participent à l'élevage des bêtes pour vous procurer un goût et une qualité exceptionnelle.",
+      "price": 1.5,
+      "calories": 16,
+      "image": "viande_boeuf",
+      "quantity": 1
+    },
+    {
+      "id": 12,
+      "name": "Sauce ketchup",
+      "description": "Sauce ketchup Heinz. C'est notre plus grand plaisir que de vous annoncer que cette même sauce ketchup qui a bercée votre enfance, ansi que la nôtre, est disponible ici-même pour le plaisir de tout à chacuns.",
+      "price": 0.2,
+      "calories": 8,
+      "image": "sauce_ketchup",
+      "quantity": 1
+    },
+    {
+      "id": 13,
+      "name": "Sauce moutarde",
+      "description": "Sauce moutarde à l'ancienne en provenance de Dijon. Cette sauce est parfaite accompagnée d'un de nos hamburgers ou cheeseburgers",
+      "price": 0.2,
+      "calories": 7,
+      "image": "sauce_moutarde",
+      "quantity": 1
+    },
+    {
+      "id": 21,
+      "name": "Oignons coupés en dés - 5g",
+      "description": "Oignons en provenance d'Espagne coupés en dés.",
+      "price": 0.2,
+      "calories": 4,
+      "image": "oignons_des",
+      "quantity": 1
+    },
+    {
+      "id": 26,
+      "name": "Rondelle de cornichon",
+      "description": "Cornichons élevés sous le soleil d'Espagne",
+      "price": 0.05,
+      "calories": 3,
+      "image": "cornichon",
+      "quantity": 1
+    }
+  ]
+}]

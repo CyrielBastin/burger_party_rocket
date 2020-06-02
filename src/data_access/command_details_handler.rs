@@ -226,3 +226,29 @@ fn write_new_drink_content_to_file(list_drinks: Vec<Drink>, file_path: &str) -> 
 
     Ok(())
 }
+
+//==================================================================================================
+// Section for retrieving burgers and drinks of the command and send them to the controller
+//==================================================================================================
+
+pub fn fetch_cmd_burgers() -> Option<String>
+{
+    let file_path = "public/command_details/details_burgers.json";
+    let mut file = File::open(file_path).unwrap();
+
+    let mut file_content = String::new();
+    file.read_to_string(&mut file_content).unwrap();
+
+    Some(file_content)
+}
+
+pub fn fetch_cmd_drinks() -> Option<String>
+{
+    let file_path = "public/command_details/details_drinks.json";
+    let mut file = File::open(file_path).unwrap();
+
+    let mut file_content = String::new();
+    file.read_to_string(&mut file_content).unwrap();
+
+    Some(file_content)
+}
