@@ -53,7 +53,6 @@
 }
 
 
-
 .main-section-command
 {
   display: flex;
@@ -68,14 +67,53 @@
   height: 70vh;
   overflow: auto;
 
-  .bur-section
+  .bur-section img, .drk-section img
   {
-    background-color: colors.$orange_background;
+    display: block;
   }
 
-  .drk-section
+  .bur-section, .drk-section
   {
-    background-color: colors.$blue;
+    display: flex;
+    flex-direction: column;
+
+    .div-item
+    {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .slide-right-1
+    {
+      width: 11vw;
+      margin-left: 1vw;
+    }
+  }
+
+  .bur-section .item-qty, .drk-section .item-qty
+  {
+    font-family: fonts.$Pacifico;
+    font-size: 4vh;
+    line-height: 12vh;
+    margin-left: 1vw;
+    width: 6vw;
+    text-align: center;
+    color: colors.$orange;
+    background-color: colors.$green;
+  }
+
+  .bur-section .item_mini-img, .drk-section .item_mini-img
+  {
+    width: 7.5vw;
+    height: 10vh;
+    margin: auto;
+  }
+
+  .bur-section .item_mini-name, .drk-section .item_mini-name
+  {
+    font-family: fonts.$Roboto;
+    font-size: 2vh;
+    text-align: center;
   }
 }
 
