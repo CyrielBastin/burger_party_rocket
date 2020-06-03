@@ -57,10 +57,17 @@ pub fn command_add_drink(id: u32) -> Template
     Template::render("command/add_product", context)
 }
 
+#[get("/details/overview")]
+pub fn command_details() -> Template
+{
+    let mut context = Context::new();
 
-/*
- * Structure to receive the kind (burger or drink), its `id` and `quantity` to add to the command
- */
+    Template::render("command/command_details", context)
+}
+
+//==================================================================================================
+// Structure to receive the kind (burger or drink), its `id` and `quantity` to add to the command
+//==================================================================================================
 #[derive(FromForm, Debug)]
 pub struct CmdQty
 {

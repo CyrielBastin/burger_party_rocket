@@ -34,6 +34,7 @@ fn main()
             controller::command_controller::command_reset,
             controller::command_controller::command_add_burger,
             controller::command_controller::command_add_drink,
+            controller::command_controller::command_details,
             controller::command_controller::set_cmd_details,
             controller::command_controller::fetch_burgers,
             controller::command_controller::fetch_drinks])

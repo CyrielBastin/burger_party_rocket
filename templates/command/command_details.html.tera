@@ -1,0 +1,37 @@
+{% extends '_base' %}
+
+{% block title %}Command Details{% endblock title %}
+
+{% block body %}
+    <div class="cmd-details-overview">
+        <div class="bur-cmd-details">
+            <div class="bur-list">
+                <!-- this part will be generated in JavaScript -->
+                <div class="item-details">
+                    <div class="details-item_qty">3</div>
+                    <div class="details-item_img">img tag here</div>
+                    <div class="details-item_name">Supreme chicken</div>
+                </div>
+                <!---->
+            </div>
+            <div class="bur-cal_price"></div>
+        </div>
+        <div class="drk-cmd-details">
+            <div class="drk-list"></div>
+            <div class="drk-cal_price"></div>
+        </div>
+    </div>
+
+    <div class="white-line"></div>
+
+    <div class="details-footer">
+        <div class="btn-to_return">Retour</div>
+        <div class="summary-cal_price">
+            <div class="summary-cal"></div>
+            <div class="summary-price"></div>
+        </div>
+        <div class="btn-validate_command">Valider Commande et Payer</div>
+    </div>
+
+    <script src="/public/js/get/_command_details"></script>
+{% endblock body %}
