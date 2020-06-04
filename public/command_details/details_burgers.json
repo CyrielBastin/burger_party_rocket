@@ -1,65 +1,215 @@
-[{
-  "id": 1,
-  "name": "Hamburger",
-  "description": "Hamburger classique mais indémodable avec une viande élevée en Belgique.",
-  "price": 2.0,
-  "recipe": "Burger composé de: 1 pain blanc normal, 1 steak haché pur boeuf 50g, cornichons, sauce ketchup, sauce moutarde et des oignons coupés en dés.",
-  "image": "hamburger",
-  "quantity": 2,
-  "ingredients": [
-    {
-      "id": 1,
-      "name": "Pain blanc - normal",
-      "description": "Pain blanc nourissant se mariant parfaitement avec des ingrédients judicieusement sélectionnés par nos experts du goût afin de réaliser des recettes délicieusement divine.",
-      "price": 0.25,
-      "calories": 5,
-      "image": "pain_dessus+pain_dessous",
-      "quantity": 1
-    },
-    {
-      "id": 5,
-      "name": "Steak haché pur boeuf - 50g",
-      "description": "Viande pur boeuf, provenant d'éleveurs belges, cuite au grill à la perfection. Ce goût de la viande inimitable a fait de notre enseigne un leader national et reconnu pour sa qualité et son respect des différents acteurs qui participent à l'élevage des bêtes pour vous procurer un goût et une qualité exceptionnelle.",
-      "price": 1.5,
-      "calories": 16,
-      "image": "viande_boeuf",
-      "quantity": 1
-    },
-    {
-      "id": 12,
-      "name": "Sauce ketchup",
-      "description": "Sauce ketchup Heinz. C'est notre plus grand plaisir que de vous annoncer que cette même sauce ketchup qui a bercée votre enfance, ansi que la nôtre, est disponible ici-même pour le plaisir de tout à chacuns.",
-      "price": 0.2,
-      "calories": 8,
-      "image": "sauce_ketchup",
-      "quantity": 1
-    },
-    {
-      "id": 13,
-      "name": "Sauce moutarde",
-      "description": "Sauce moutarde à l'ancienne en provenance de Dijon. Cette sauce est parfaite accompagnée d'un de nos hamburgers ou cheeseburgers",
-      "price": 0.2,
-      "calories": 7,
-      "image": "sauce_moutarde",
-      "quantity": 1
-    },
-    {
-      "id": 21,
-      "name": "Oignons coupés en dés - 5g",
-      "description": "Oignons en provenance d'Espagne coupés en dés.",
-      "price": 0.2,
-      "calories": 4,
-      "image": "oignons_des",
-      "quantity": 1
-    },
-    {
-      "id": 26,
-      "name": "Rondelle de cornichon",
-      "description": "Cornichons élevés sous le soleil d'Espagne",
-      "price": 0.05,
-      "calories": 3,
-      "image": "cornichon",
-      "quantity": 1
-    }
-  ]
-}]
+[
+  {
+    "id": 1,
+    "name": "Hamburger",
+    "description": "Hamburger classique mais indémodable avec une viande élevée en Belgique.",
+    "price": 2.0,
+    "recipe": "Burger composé de: 1 pain blanc normal, 1 steak haché pur boeuf 50g, cornichons, sauce ketchup, sauce moutarde et des oignons coupés en dés.",
+    "image": "hamburger",
+    "quantity": 2,
+    "ingredients": [
+      {
+        "id": 1,
+        "name": "Pain blanc - normal",
+        "description": "Pain blanc nourissant se mariant parfaitement avec des ingrédients judicieusement sélectionnés par nos experts du goût afin de réaliser des recettes délicieusement divine.",
+        "price": 0.25,
+        "calories": 5,
+        "image": "pain_dessus+pain_dessous",
+        "quantity": 1
+      },
+      {
+        "id": 5,
+        "name": "Steak haché pur boeuf - 50g",
+        "description": "Viande pur boeuf, provenant d'éleveurs belges, cuite au grill à la perfection. Ce goût de la viande inimitable a fait de notre enseigne un leader national et reconnu pour sa qualité et son respect des différents acteurs qui participent à l'élevage des bêtes pour vous procurer un goût et une qualité exceptionnelle.",
+        "price": 1.5,
+        "calories": 16,
+        "image": "viande_boeuf",
+        "quantity": 1
+      },
+      {
+        "id": 12,
+        "name": "Sauce ketchup",
+        "description": "Sauce ketchup Heinz. C'est notre plus grand plaisir que de vous annoncer que cette même sauce ketchup qui a bercée votre enfance, ansi que la nôtre, est disponible ici-même pour le plaisir de tout à chacuns.",
+        "price": 0.2,
+        "calories": 8,
+        "image": "sauce_ketchup",
+        "quantity": 1
+      },
+      {
+        "id": 13,
+        "name": "Sauce moutarde",
+        "description": "Sauce moutarde à l'ancienne en provenance de Dijon. Cette sauce est parfaite accompagnée d'un de nos hamburgers ou cheeseburgers",
+        "price": 0.2,
+        "calories": 7,
+        "image": "sauce_moutarde",
+        "quantity": 1
+      },
+      {
+        "id": 21,
+        "name": "Oignons coupés en dés - 5g",
+        "description": "Oignons en provenance d'Espagne coupés en dés.",
+        "price": 0.2,
+        "calories": 4,
+        "image": "oignons_des",
+        "quantity": 1
+      },
+      {
+        "id": 26,
+        "name": "Rondelle de cornichon",
+        "description": "Cornichons élevés sous le soleil d'Espagne",
+        "price": 0.05,
+        "calories": 3,
+        "image": "cornichon",
+        "quantity": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Supreme Cheese",
+    "description": "Ce burger est notre spécialité pour les amateurs de fromage se trouvant parmi nos clients.",
+    "price": 5.0,
+    "recipe": "Burger composé de: 1 grand pain aux céréales, 1 steak haché pur boeuf 100g, salade, oignons tranché en ronds, sauce supreme fromage, sauce ketchup, tomates, cornichons et 1 tranche de cheddar.",
+    "image": "supreme_cheese",
+    "quantity": 4,
+    "ingredients": [
+      {
+        "id": 4,
+        "name": "Pain aux céréales - grand",
+        "description": "Pain complet réalisé avec soin par des artistes boulanger qui vous rappellera le goût de la campagne. Les recettes crées à partir de ce pain sont pour les gens n'ayant pas peur d'avoir une explosion de saveurs se produisant à l'intérieur de leur bouche et de leur estomac.",
+        "price": 0.45,
+        "calories": 7,
+        "image": "pain_dessus+pain_dessous",
+        "quantity": 1
+      },
+      {
+        "id": 7,
+        "name": "Steak haché pur boeuf - 100g",
+        "description": "Viande pur boeuf, provenant d'éleveurs belges, cuite au grill à la perfection. Ce goût de la viande inimitable a fait de notre enseigne un leader national et reconnu pour sa qualité et son respect des différents acteurs qui participent à l'élevage des bêtes pour vous procurer un goût et une qualité exceptionnelle. Cette viande exceptionnelle est proposée uniquement dans la recette de nos 'Supreme'.",
+        "price": 3.0,
+        "calories": 32,
+        "image": "viande_boeuf",
+        "quantity": 1
+      },
+      {
+        "id": 12,
+        "name": "Sauce ketchup",
+        "description": "Sauce ketchup Heinz. C'est notre plus grand plaisir que de vous annoncer que cette même sauce ketchup qui a bercée votre enfance, ansi que la nôtre, est disponible ici-même pour le plaisir de tout à chacuns.",
+        "price": 0.2,
+        "calories": 8,
+        "image": "sauce_ketchup",
+        "quantity": 1
+      },
+      {
+        "id": 16,
+        "name": "Sauce supreme fromage",
+        "description": "Cette sauce composée de 3 fromages différents est l'accompagnement idéal pour notre supreme fromage, qui est l'un des burgers préférés de nos consommateurs.",
+        "price": 0.2,
+        "calories": 12,
+        "image": "sauce_supreme_fromage",
+        "quantity": 2
+      },
+      {
+        "id": 20,
+        "name": "Tranche de fromage cheddar - 10g",
+        "description": "Fromage d'origine française. 1 tranche de fromage orange cheddar français (10g) se marie parfaitement avec notre inimitable 'giant' ainsi que la plupart de nos mets.",
+        "price": 0.35,
+        "calories": 11,
+        "image": "fromage_cheddar",
+        "quantity": 1
+      },
+      {
+        "id": 22,
+        "name": "Oignons tranchés en ronds - 5g",
+        "description": "Oignons en provenance d'Espagne tranchés en ronds.",
+        "price": 0.2,
+        "calories": 4,
+        "image": "oignons_ronds",
+        "quantity": 1
+      },
+      {
+        "id": 23,
+        "name": "Salade - 10g",
+        "description": "Salades élevées sous le soleil d'Italie",
+        "price": 0.2,
+        "calories": 0,
+        "image": "salade",
+        "quantity": 1
+      },
+      {
+        "id": 24,
+        "name": "Rondelle de tomate",
+        "description": "Tomates élevées sous le soleil d'Italie",
+        "price": 0.1,
+        "calories": 2,
+        "image": "tomate",
+        "quantity": 2
+      },
+      {
+        "id": 26,
+        "name": "Rondelle de cornichon",
+        "description": "Cornichons élevés sous le soleil d'Espagne",
+        "price": 0.05,
+        "calories": 3,
+        "image": "cornichon",
+        "quantity": 2
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Fish Burger",
+    "description": "Notre célèbre burger au goût de la mer pour les amateurs de pêche et les personnes ne désirant pas manger de viande rouge.",
+    "price": 4.5,
+    "recipe": "Burger composé de: 1 pain blanc normal, 1 croquette de Colin 60g cuite à la friteuse, salade, sauce mayonnaise et 1 tranche de cheddar.",
+    "image": "fish_burger",
+    "quantity": 1,
+    "ingredients": [
+      {
+        "id": 1,
+        "name": "Pain blanc - normal",
+        "description": "Pain blanc nourissant se mariant parfaitement avec des ingrédients judicieusement sélectionnés par nos experts du goût afin de réaliser des recettes délicieusement divine.",
+        "price": 0.25,
+        "calories": 5,
+        "image": "pain_dessus+pain_dessous",
+        "quantity": 1
+      },
+      {
+        "id": 8,
+        "name": "Croquette de colin - 60g",
+        "description": "Cette croquette savoureuse de poisson cuite à la friteuse est idéale pour les personnes ne désirant pas manger de viande rouge. Notre enseigne travaille durement afin de s'assurer que les colins à l'origine de ces croquettes sont frais et de bonne qualité.",
+        "price": 2.0,
+        "calories": 27,
+        "image": "croquette_poisson",
+        "quantity": 1
+      },
+      {
+        "id": 11,
+        "name": "Sauce mayonnaise",
+        "description": "Les ingrédients de cette sauce ont été soigneusement sélectionnés par nos experts afin de vous poroposer la meilleure mayonnaise possible. Cette sauce mayonnaise réalisée à l'ancienne fera même rougir votre grand-mère.",
+        "price": 0.2,
+        "calories": 12,
+        "image": "sauce_mayonnaise",
+        "quantity": 2
+      },
+      {
+        "id": 20,
+        "name": "Tranche de fromage cheddar - 10g",
+        "description": "Fromage d'origine française. 1 tranche de fromage orange cheddar français (10g) se marie parfaitement avec notre inimitable 'giant' ainsi que la plupart de nos mets.",
+        "price": 0.35,
+        "calories": 11,
+        "image": "fromage_cheddar",
+        "quantity": 1
+      },
+      {
+        "id": 23,
+        "name": "Salade - 10g",
+        "description": "Salades élevées sous le soleil d'Italie",
+        "price": 0.2,
+        "calories": 0,
+        "image": "salade",
+        "quantity": 2
+      }
+    ]
+  }
+]

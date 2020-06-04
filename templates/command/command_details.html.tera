@@ -7,17 +7,13 @@
         <div class="bur-cmd-details">
             <div class="bur-list">
                 <!-- this part will be generated in JavaScript -->
-                <div class="item-details">
-                    <div class="details-item_qty">3</div>
-                    <div class="details-item_img">img tag here</div>
-                    <div class="details-item_name">Supreme chicken</div>
-                </div>
-                <!---->
             </div>
             <div class="bur-cal_price"></div>
         </div>
         <div class="drk-cmd-details">
-            <div class="drk-list"></div>
+            <div class="drk-list">
+                <!-- this part will be generated in JavaScript -->
+            </div>
             <div class="drk-cal_price"></div>
         </div>
     </div>

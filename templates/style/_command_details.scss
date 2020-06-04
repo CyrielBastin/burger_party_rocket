@@ -1,0 +1,96 @@
+@use "colors";
+@use "fonts";
+
+
+.cmd-details-overview
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5vh;
+
+  .bur-cmd-details .bur-list
+  {
+    border: 4px solid colors.$orange_dark;
+  }
+  .drk-cmd-details .drk-list
+  {
+    border: 4px solid colors.$blue;
+  }
+
+  .bur-cmd-details, .drk-cmd-details
+  {
+    width: 44vw;
+    height: 57vh;
+    max-height: 57vh;
+
+    .bur-list .details-item_qty
+    {
+      color: colors.$orange_dark;
+    }
+    .drk-list .details-item_qty
+    {
+      color: colors.$blue;
+    }
+
+    .bur-list .details-item_name, .bur-list .div_img_name
+    {
+      background-color: colors.$orange_background;
+    }
+    .drk-list .details-item_name, .drk-list .div_img_name
+    {
+      background-color: colors.$blue;
+    }
+
+    .bur-list, .drk-list
+    {
+      border-radius: 25px;
+      overflow-y: auto;
+      height: 45vh;
+      max-height: 45vh;
+      display: flex;
+      flex-wrap: wrap;
+
+      .item-details
+      {
+        display: flex;
+        flex-direction: row;
+        margin: 1.5vw;
+
+        .details-item_qty
+        {
+          width: 4.5vw;
+          font-family: fonts.$Salsa;
+          font-size: 8vh;
+          text-align: center;
+          line-height: 19.3vh;
+          margin-left: 1vw;
+          margin-right: 1vw;
+        }
+        .div_img_name
+        {
+          width: 11vw;
+          height: 19.3vh;
+          border-radius: 20px;
+
+          .details-item_img
+          {
+            width: 11vw;
+            height: 13.3vh;
+            border-radius: 20px;
+          }
+          .details-item_name
+          {
+            font-family: fonts.$Salsa;
+            font-size: 2.3vh;
+            width: 11vw;
+            text-align: center;
+            margin-top: -1vh;
+            max-height: 6vh;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+}

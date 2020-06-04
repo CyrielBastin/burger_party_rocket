@@ -1,5 +1,6 @@
 @use "fonts";
 @use "colors";
+@use "command_details";
 
 .menu-bur_drk
 {
@@ -111,7 +112,7 @@
 
   .bur-section .item_mini-name, .drk-section .item_mini-name
   {
-    font-family: fonts.$Roboto;
+    font-family: fonts.$Salsa;
     font-size: 2vh;
     text-align: center;
   }
