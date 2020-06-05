@@ -3,11 +3,14 @@
  * before validating it and let the customer pays
  */
 
-const bur_list = document.querySelector(".bur-list");
-const bur_cal_price = document.querySelector(".bur-cal_price");
-const drk_list = document.querySelector(".drk-list");
-const drk_cal_price = document.querySelector(".drk-cal_price");
+const bur_list = document.querySelector(".bur-list")
+const bur_cal_price = document.querySelector(".bur-cal_price")
+const drk_list = document.querySelector(".drk-list")
+const drk_cal_price = document.querySelector(".drk-cal_price")
+const summary_cal = document.querySelector(".summary-cal")
+const summary_price = document.querySelector(".summary-price")
 
+let total_calories = 0; let total_price = 0;
 
 (async function ()
 {
@@ -19,6 +22,9 @@ const drk_cal_price = document.querySelector(".drk-cal_price");
         burgers.kind = "burger"
         // console.table(burgers)
         add_cmd_element_to_DOM(burgers)
+        //
+        const calories_and_price = get_calories_and_price(burgers)
+        add_bur_drk_details_to_DOM(calories_and_price, "burger")
     }
 
 
@@ -30,7 +36,12 @@ const drk_cal_price = document.querySelector(".drk-cal_price");
         drinks.kind = "drink"
         // console.table(drinks)
         add_cmd_element_to_DOM(drinks)
+        //
+        const calories_and_price = get_calories_and_price(drinks)
+        add_bur_drk_details_to_DOM(calories_and_price, "drink")
     }
+
+    set_total_calories_and_price()
 })()
 
 
@@ -78,10 +89,62 @@ function add_cmd_element_to_DOM (elements)
 }
 
 /**
- * @param
+ * @param {object<{calories: number, price: number}>} cal_price_obj
+ * @param {string} kind
+ */
+function add_bur_drk_details_to_DOM (cal_price_obj, kind)
+{
+    const text_cal = document.createTextNode(`calories : ${cal_price_obj.calories} Kcal,`)
+    const span = document.createElement("span")
+    span.className = "inner-margin"
+    const text_price = document.createTextNode(`prix : ${cal_price_obj.price} €`)
+    if (kind === "burger") {
+        bur_cal_price.appendChild(text_cal)
+        bur_cal_price.appendChild(span)
+        bur_cal_price.appendChild(text_price)
+    } else {
+        drk_cal_price.appendChild(text_cal)
+        drk_cal_price.appendChild(span)
+        drk_cal_price.appendChild(text_price)
+    }
+}
+
+/**
+ * @param {Array<entity::Burger | entity::Drink>} elements
  * @returns {object<{calories: number, price: number}>}
  */
-function get_calories_and_price ()
+function get_calories_and_price (elements)
 {
+    const el_kind = elements['kind']
+    let _calories = 0; let _price = 0
+
+    for (const el of elements)
+    {
+        _price += (el['price'] * el['quantity'])
+        if (el_kind === "drink") {
+            _calories += (el['calories'] * el['quantity'])
+        }
+        else {
+            let bur_cal = 0
+            for (const ingr of el['ingredients']) {
+                bur_cal += (ingr['calories'] * ingr['quantity'])
+            }
+            bur_cal *= el['quantity']
+            _calories += bur_cal
+        }
+    }
+    total_calories += _calories
+    total_price += _price
+
+    return {
+        calories: _calories,
+        price: _price
+    }
+}
+
+function set_total_calories_and_price ()
+{
+    summary_cal.insertAdjacentText("beforeend", `${total_calories} KCal`)
+    summary_price.insertAdjacentText("beforeend", `${total_price} €`)
 }
 
