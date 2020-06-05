@@ -8,15 +8,21 @@ use crate::types::db_types::{CmdFromDb, DrkFromDb, BurFromDb};
 
 impl DAO<Command> for DAOCommand
 {
-    fn create(&self, _obj: Command) -> bool {
+    fn create(&mut self, _obj: Command) -> bool
+    {
+        let first_query = "INSERT INTO `commande` (n_table, n_serveur, paye, heure) \
+                                 VALUES (1, ?, ?, ?)";
+
+        let result: () = self.conn.exec_drop(first_query, (1, 1, _obj.get_date_time())).unwrap();
+        /////////////////////////
         false
     }
 
-    fn update(&self, _obj: Command) -> bool {
+    fn update(&mut self, _obj: Command) -> bool {
         false
     }
 
-    fn delete(&self, _obj: Command) -> bool {
+    fn delete(&mut self, _obj: Command) -> bool {
         false
     }
 

@@ -7,15 +7,15 @@ use crate::types::db_types::DrkFromDb;
 
 impl DAO<Drink> for DAODrink
 {
-    fn create(&self, _obj: Drink) -> bool {
+    fn create(&mut self, _obj: Drink) -> bool {
         false
     }
 
-    fn update(&self, _obj: Drink) -> bool {
+    fn update(&mut self, _obj: Drink) -> bool {
         false
     }
 
-    fn delete(&self, _obj: Drink) -> bool {
+    fn delete(&mut self, _obj: Drink) -> bool {
         false
     }
 

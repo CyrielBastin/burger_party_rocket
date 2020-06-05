@@ -7,15 +7,15 @@ use mysql::prelude::Queryable;
 
 impl DAO<Burger> for DAOBurger
 {
-    fn create(&self, _obj: Burger) -> bool {
+    fn create(&mut self, _obj: Burger) -> bool {
         false
     }
 
-    fn update(&self, _obj: Burger) -> bool {
+    fn update(&mut self, _obj: Burger) -> bool {
         false
     }
 
-    fn delete(&self, _obj: Burger) -> bool {
+    fn delete(&mut self, _obj: Burger) -> bool {
         false
     }
 

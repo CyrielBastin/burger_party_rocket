@@ -13,9 +13,9 @@ mod db_connection;
 
 pub trait DAO<T>
 {
-    fn create(&self, _obj: T) -> bool;
-    fn update(&self, _obj: T) -> bool;
-    fn delete(&self, _obj: T) -> bool;
+    fn create(&mut self, _obj: T) -> bool;
+    fn update(&mut self, _obj: T) -> bool;
+    fn delete(&mut self, _obj: T) -> bool;
     fn find_by_id(&mut self, id: u32) -> T;
     fn find_all(&mut self) -> Vec<T>;
 }

@@ -8,15 +8,15 @@ use crate::data_access::dao_burger::push_row_to_vec_ingr;
 
 impl DAO<Ingredient> for DAOIngredient
 {
-    fn create(&self, _obj: Ingredient) -> bool {
+    fn create(&mut self, _obj: Ingredient) -> bool {
         false
     }
 
-    fn update(&self, _obj: Ingredient) -> bool {
+    fn update(&mut self, _obj: Ingredient) -> bool {
         false
     }
 
-    fn delete(&self, _obj: Ingredient) -> bool {
+    fn delete(&mut self, _obj: Ingredient) -> bool {
         false
     }
 

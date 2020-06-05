@@ -60,7 +60,7 @@ pub fn command_add_drink(id: u32) -> Template
 #[get("/details/overview")]
 pub fn command_details() -> Template
 {
-    let mut context = Context::new();
+    let context = Context::new();
 
     Template::render("command/command_details", context)
 }
