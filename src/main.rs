@@ -36,6 +36,7 @@ fn main()
             controller::command_controller::command_add_drink,
             controller::command_controller::command_details,
             controller::command_controller::set_cmd_details,
+            controller::command_controller::command_payed_and_accepted,
             controller::command_controller::fetch_burgers,
             controller::command_controller::fetch_drinks])
         .attach(Template::fairing())

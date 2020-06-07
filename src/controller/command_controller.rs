@@ -65,6 +65,14 @@ pub fn command_details() -> Template
     Template::render("command/command_details", context)
 }
 
+#[get("/payed-and-accepted")]
+pub fn command_payed_and_accepted() -> Template
+{
+    let context = Context::new();
+
+    Template::render("command/command_payed_and_accepted", context)
+}
+
 //==================================================================================================
 // Structure to receive the kind (burger or drink), its `id` and `quantity` to add to the command
 //==================================================================================================

@@ -26,7 +26,7 @@
                 Prix :
             </div>
         </div>
-        <div class="btn-validate_command">Valider Commande et Payer</div>
+        <a href="/command/payed-and-accepted"><div class="btn-validate_command">Valider Commande et Payer</div></a>
     </div>
 
     <script src="/public/js/get/_command_details"></script>

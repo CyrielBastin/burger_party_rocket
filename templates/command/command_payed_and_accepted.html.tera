@@ -1,0 +1,39 @@
+{% extends '_base' %}
+
+{% block title %}Command's summary{% endblock title %}
+
+
+{% block body %}
+    <div class="section-cmd-summary">
+        <div class="cmd-summary">
+            <div class="cmd-header">
+                <div class="cmd-datetime"></div>
+                <div class="cmd-terminal"></div>
+            </div>
+            <div class="cmd-burgers">
+                <div class="item-name"></div>
+                <div class="item-price"></div>
+            </div>
+            <div class="line-separator"></div>
+            <div class="cmd-drinks">
+                <div class="item-name"></div>
+                <div class="item-price"></div>
+            </div>
+            <div class="line-separator"></div>
+            <div class="cmd-total">
+                <div class="text-total">Total :</div>
+                <div class="items-price"></div>
+            </div>
+        </div>
+        <div class="word-goodbye">Merci de votre visite et à bientôt</div>
+    </div>
+    <div class="section-footer">
+        <div class="withdraw-ticket">Veuillez retirer le ticket</div>
+        <a href="/">
+            <div class="btn-control normal background-orange bottom-right">Menu Principal</div>
+        </a>
+    </div>
+
+
+    <script src="/public/js/get/_command_payed_and_accepted"></script>
+{% endblock body %}

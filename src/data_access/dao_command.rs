@@ -10,12 +10,23 @@ impl DAO<Command> for DAOCommand
 {
     fn create(&mut self, _obj: Command) -> bool
     {
+        if _obj.get_burgers().is_empty() && _obj.get_drinks().is_empty() {
+            return false;
+        }
+
         let first_query = "INSERT INTO `commande` (n_table, n_serveur, paye, heure) \
                                  VALUES (1, ?, ?, ?)";
 
-        let result: () = self.conn.exec_drop(first_query, (1, 1, _obj.get_date_time())).unwrap();
-        /////////////////////////
-        false
+        let _: () = self.conn.exec_drop(first_query, (1, 1, _obj.get_date_time())).unwrap();
+
+        let command_id = self.get_id_from_datetime(_obj.get_date_time());
+        let command_burgers = _obj.get_burgers();
+        let command_drinks = _obj.get_drinks();
+
+        push_cmd_burgers_to_db(self, command_id, command_burgers);
+        push_cmd_drinks_to_db(self, command_id, command_drinks);
+
+        true
     }
 
     fn update(&mut self, _obj: Command) -> bool {
@@ -130,5 +141,25 @@ fn push_row_to_vec_bur(result: Vec<Row>, list_bur: &mut Vec<Burger>)
         burger.feed_from_db(datas);
         burger.set_ingredients(fetch_ingredients(&mut DAOFactory::create_dao_burger(), burger.get_id()));
         list_bur.push(burger);
+    }
+}
+
+fn push_cmd_burgers_to_db(dao: &mut DAOCommand, id: u32, vec_burgers: &Vec<Burger>)
+{
+    if vec_burgers.is_empty() { return; }
+
+    let query = "INSERT INTO `commande_burger` VALUES (?, ?, ?)";
+    for burger in vec_burgers {
+        let _ = dao.conn.exec_drop(query, (id, burger.get_id(), burger.get_quantity())).unwrap();
+    }
+}
+
+fn push_cmd_drinks_to_db(dao: &mut DAOCommand, id: u32, vec_drinks: &Vec<Drink>)
+{
+    if vec_drinks.is_empty() { return; }
+
+    let query = "INSERT INTO `commande_boisson` VALUES (?, ?, ?)";
+    for drink in vec_drinks {
+        let _ = dao.conn.exec_drop(query, (id, drink.get_id(), drink.get_quantity())).unwrap();
     }
 }
