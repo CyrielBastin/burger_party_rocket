@@ -1,14 +1,11 @@
-/*
- * Script file for the details of the command
- * before validating it and let the customer pays
- */
-
 const bur_list = document.querySelector(".bur-list")
 const bur_cal_price = document.querySelector(".bur-cal_price")
 const drk_list = document.querySelector(".drk-list")
 const drk_cal_price = document.querySelector(".drk-cal_price")
 const summary_cal = document.querySelector(".summary-cal")
 const summary_price = document.querySelector(".summary-price")
+const bur_cmd_det = document.querySelector(".bur-cmd-details")
+const drk_cmd_det = document.querySelector(".drk-cmd-details")
 
 let total_calories = 0; let total_price = 0;
 
@@ -26,6 +23,10 @@ let total_calories = 0; let total_price = 0;
         const calories_and_price = get_calories_and_price(burgers)
         add_bur_drk_details_to_DOM(calories_and_price, "burger")
     }
+    else
+    {
+        bur_cmd_det.style.display = "none"
+    }
 
 
     const resp_drinks = await fetch("/command/fetch/drinks")
@@ -39,6 +40,10 @@ let total_calories = 0; let total_price = 0;
         //
         const calories_and_price = get_calories_and_price(drinks)
         add_bur_drk_details_to_DOM(calories_and_price, "drink")
+    }
+    else
+    {
+        drk_cmd_det.style.display = "none"
     }
 
     set_total_calories_and_price()

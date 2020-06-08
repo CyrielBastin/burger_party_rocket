@@ -40,9 +40,6 @@ function add_cmd_element_to_DOM (elements)
     const el_kind = elements['kind']
     for (const el of elements)
     {
-        /*
-         * create the div in which in each burger and drink will be in !
-         */
         const div_item = document.createElement("div")
         div_item.className = "div-item"
 
