@@ -50,4 +50,4 @@ pub struct Command
     burgers: Vec<Burger>,
     drinks: Vec<Drink>
 }
-mod command;
+pub(crate) mod command;

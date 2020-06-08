@@ -5,6 +5,8 @@ use rocket::response::Redirect;
 use crate::data_access::{DAOFactory, DAO};
 use crate::validators::command_validator::are_datas_valid;
 use crate::data_access::command_details_handler::{write_cmd_details, empty_command_details_content, fetch_cmd_burgers, fetch_cmd_drinks};
+use crate::entity::Command;
+use crate::entity::command::get_local_to_string;
 
 //==================================================================================================
 // All routes ares prefixed with /command
@@ -68,7 +70,18 @@ pub fn command_details() -> Template
 #[get("/payed-and-accepted")]
 pub fn command_payed_and_accepted() -> Template
 {
-    let context = Context::new();
+    let mut dao_command = DAOFactory::create_dao_command();
+    let mut command = Command::new();
+    let date_time = get_local_to_string();
+    command.set_date_time(&date_time);
+    command.append_burgers_and_drinks();
+
+    dao_command.create(command);
+
+    let _ = empty_command_details_content();
+
+    let mut context = Context::new();
+    context.insert("datetime", &date_time);
 
     Template::render("command/command_payed_and_accepted", context)
 }

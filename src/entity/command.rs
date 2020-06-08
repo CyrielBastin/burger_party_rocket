@@ -2,6 +2,8 @@ use super::{Command, Burger, Drink};
 use crate::types::db_types::CmdFromDb;
 use chrono::Local;
 use regex::Regex;
+use std::fs::File;
+use std::io::Read;
 
 #[allow(dead_code)]
 impl Command
@@ -63,19 +65,6 @@ impl Command
 
 #[allow(dead_code)]
 impl Command {
-    pub fn get_local_to_string() -> String
-    {
-        let local = Local::now();
-        let text = local.to_string();
-        let re = Regex::new(r"(^.*)\.(.*$)").unwrap();
-        let mut result = String::from("");
-        // captures the DateTime of the string up until milliseconds
-        // in order to push it to the Database
-        result.push_str(&re.captures(&text).unwrap()[1]);
-
-        result
-    }
-
     pub fn feed_from_db(&mut self, datas: CmdFromDb)
     {
         self.set_id(match datas.0 {
@@ -95,4 +84,56 @@ impl Command {
             None => false
         });
     }
+
+    pub fn append_burgers_and_drinks(&mut self)
+    {
+        self.set_burgers(append_burgers());
+        self.set_drinks(append_drinks());
+    }
+}
+
+fn append_burgers() -> Vec<Burger>
+{
+    let file_path = "public/command_details/details_burgers.json";
+    let mut file = File::open(file_path).unwrap();
+
+    let mut file_content = String::new();
+    file.read_to_string(&mut file_content).unwrap();
+
+    let mut list_burgers = Vec::new();
+    if !file_content.is_empty()
+    {
+        list_burgers = serde_json::from_str(&file_content).unwrap();
+    }
+
+    list_burgers
+}
+fn append_drinks() -> Vec<Drink>
+{
+    let file_path = "public/command_details/details_drinks.json";
+    let mut file = File::open(file_path).unwrap();
+
+    let mut file_content = String::new();
+    file.read_to_string(&mut file_content).unwrap();
+
+    let mut list_drinks = Vec::new();
+    if !file_content.is_empty()
+    {
+        list_drinks = serde_json::from_str(&file_content).unwrap();
+    }
+
+    list_drinks
+}
+
+pub fn get_local_to_string() -> String
+{
+    let local = Local::now();
+    let text = local.to_string();
+    let re = Regex::new(r"(^.*)\.(.*$)").unwrap();
+    let mut result = String::from("");
+    // captures the DateTime of the string up until milliseconds
+    // in order to push it to the Database
+    result.push_str(&re.captures(&text).unwrap()[1]);
+
+    result
 }

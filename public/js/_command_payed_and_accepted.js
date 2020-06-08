@@ -1,1 +1,6 @@
-console.log('hello')
+
+
+(async function()
+{
+    console.log('hello from async function !')
+})()

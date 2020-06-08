@@ -5,10 +5,15 @@
 
 {% block body %}
     <div class="section-cmd-summary">
-        <div class="cmd-summary">
+        <div class="cmd-summary background-white">
             <div class="cmd-header">
                 <div class="cmd-datetime"></div>
                 <div class="cmd-terminal"></div>
+            </div>
+            <div class="line-separator"></div>
+            <div class="items-name_price">
+                <div class="item-name">Nom</div>
+                <div class="item-price">Prix</div>
             </div>
             <div class="cmd-burgers">
                 <div class="item-name"></div>
@@ -25,15 +30,14 @@
                 <div class="items-price"></div>
             </div>
         </div>
-        <div class="word-goodbye">Merci de votre visite et à bientôt</div>
+        <div class="word-goodbye white background-green_dark">Merci de votre visite et à bientôt</div>
     </div>
     <div class="section-footer">
         <div class="withdraw-ticket">Veuillez retirer le ticket</div>
-        <a href="/">
-            <div class="btn-control normal background-orange bottom-right">Menu Principal</div>
-        </a>
+        <a href="/"><div class="btn-goto-index green_dark background-orange">Menu Principal</div></a>
     </div>
 
+    <div id="datetime" style="display: none;">{{ datetime }}</div>
 
     <script src="/public/js/get/_command_payed_and_accepted"></script>
 {% endblock body %}
