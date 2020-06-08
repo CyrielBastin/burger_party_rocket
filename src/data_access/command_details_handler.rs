@@ -252,3 +252,12 @@ pub fn fetch_cmd_drinks() -> Option<String>
 
     Some(file_content)
 }
+
+pub fn fetch_cmd_by_datetime(datetime: &str) -> Option<String>
+{
+    let mut dao_cmd = DAOFactory::create_dao_command();
+    let cmd_id = dao_cmd.get_id_from_datetime(datetime);
+    let cmd = dao_cmd.find_by_id(cmd_id);
+
+    serde_json::to_string(&cmd).ok()
+}

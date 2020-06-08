@@ -38,7 +38,8 @@ fn main()
             controller::command_controller::set_cmd_details,
             controller::command_controller::command_payed_and_accepted,
             controller::command_controller::fetch_burgers,
-            controller::command_controller::fetch_drinks])
+            controller::command_controller::fetch_drinks,
+            controller::command_controller::fetch_command])
         .attach(Template::fairing())
         .launch();
 }

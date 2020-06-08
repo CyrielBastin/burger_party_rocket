@@ -4,7 +4,7 @@ use rocket::request::Form;
 use rocket::response::Redirect;
 use crate::data_access::{DAOFactory, DAO};
 use crate::validators::command_validator::are_datas_valid;
-use crate::data_access::command_details_handler::{write_cmd_details, empty_command_details_content, fetch_cmd_burgers, fetch_cmd_drinks};
+use crate::data_access::command_details_handler::{write_cmd_details, empty_command_details_content, fetch_cmd_burgers, fetch_cmd_drinks, fetch_cmd_by_datetime};
 use crate::entity::Command;
 use crate::entity::command::get_local_to_string;
 
@@ -122,4 +122,10 @@ pub fn fetch_burgers() -> Option<String>
 pub fn fetch_drinks() -> Option<String>
 {
     fetch_cmd_drinks()
+}
+
+#[get("/fetch/command/<datetime>")]
+pub fn fetch_command(datetime: String) -> Option<String>
+{
+    fetch_cmd_by_datetime(&datetime)
 }
