@@ -1,2 +1,3 @@
-/target
+target/
 sass.txt
+database.json
