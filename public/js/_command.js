@@ -24,9 +24,8 @@ document.querySelector(".tab-drink")
     const resp_drinks = await fetch("/command/fetch/drinks")
     const drinks_data = await resp_drinks.text()
 
-    if (burgers_data === "" && drinks_data === "")
+    if (burgers_data !== "" || drinks_data !== "")
     {
-        btn_goto_cmd_det.removeAttribute("href")
-        btn_goto_cmd_det.style.display = "none"
+        btn_goto_cmd_det.style.display = "block"
     }
 })()

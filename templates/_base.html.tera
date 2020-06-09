@@ -6,6 +6,7 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>{% block title %}Super title here{% endblock title %}</title>
+    <link rel="icon" type="image/png" href="/public/image/get/others/logo/png">
     <link rel="stylesheet" href="/public/css/get/main">
 </head>
 <body class="{% block body_background %}background-green{% endblock body_background %}">
