@@ -11,15 +11,41 @@ const cmd_total_price = document.querySelector(".cmd-total .items-price");
     const resp_cmd = await fetch(`/command/fetch/command/${cmd_datetime}`)
     const cmd_json = await resp_cmd.json()
 
-    console.log(cmd_json)
-
-    div_cmd_datetime.insertAdjacentText("beforeend", cmd_json['date_time'])
-    div_cmd_terminal.insertAdjacentText("beforeend", cmd_json['terminal'])
-
+    add_header_to_DOM(cmd_json['date_time'], cmd_json['terminal']).then(_ => _)
     add_content_to_DOM(cmd_json['burgers'], "burger").then(_ => _)
     add_content_to_DOM(cmd_json['drinks'], "drink").then(_ => _)
     compute_total_price(cmd_json).then(price => cmd_total_price.insertAdjacentText("afterbegin", `${price} €`))
 })()
+
+
+async function add_header_to_DOM(datetime, terminal)
+{
+    convert_datetime_to_french_format(datetime)
+        .then(new_datetime => div_cmd_datetime.insertAdjacentText("beforeend", new_datetime))
+    div_cmd_terminal.insertAdjacentText("beforeend", terminal)
+}
+
+
+/*
+ * Convert from "2020-06-09 19:21:50"
+ * to "Le 09/06/2020, à 19:21:50"
+ */
+async function convert_datetime_to_french_format(datetime)
+{
+    let _datetime_split = datetime.split(' ')
+    let _date = _datetime_split[0]
+    let _time = _datetime_split[1]
+
+    let _date_split = _date.split('-')
+    let _day = _date_split[2]
+    let _month = _date_split[1]
+    let _year = _date_split[0]
+
+    const french_date = `${_day}/${_month}/${_year}`
+
+    return `Le ${french_date}, à ${_time}`
+}
+
 
 /**
  *

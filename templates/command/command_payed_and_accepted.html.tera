@@ -7,7 +7,7 @@
     <div class="section-cmd-summary">
         <div class="cmd-summary background-white">
             <div class="cmd-header">
-                <div class="cmd-datetime">Heure : </div>
+                <div class="cmd-datetime">Date : </div>
                 <div class="cmd-terminal">Terminal : </div>
             </div>
             <div class="line-separator"></div>
