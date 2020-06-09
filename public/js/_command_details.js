@@ -2,8 +2,8 @@ const bur_list = document.querySelector(".bur-list")
 const bur_cal_price = document.querySelector(".bur-cal_price")
 const drk_list = document.querySelector(".drk-list")
 const drk_cal_price = document.querySelector(".drk-cal_price")
-const summary_cal = document.querySelector(".summary-cal")
-const summary_price = document.querySelector(".summary-price")
+const summary_cal = document.querySelector(".summary-cal .value-cal")
+const summary_price = document.querySelector(".summary-price .value-price")
 const bur_cmd_det = document.querySelector(".bur-cmd-details")
 const drk_cmd_det = document.querySelector(".drk-cmd-details")
 
@@ -149,7 +149,7 @@ function get_calories_and_price (elements)
 
 function set_total_calories_and_price ()
 {
-    summary_cal.insertAdjacentText("beforeend", `${total_calories} KCal`)
-    summary_price.insertAdjacentText("beforeend", `${total_price} €`)
+    summary_cal.insertAdjacentText("afterbegin", `${total_calories} KCal`)
+    summary_price.insertAdjacentText("afterbegin", `${total_price} €`)
 }
 

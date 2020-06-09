@@ -7,7 +7,7 @@
 {% block body %}
 <h1 class="title_info">Qui Sommes-Nous ?</h1>
 
-<div class="container">
+<div class="who-are-we-container">
     <img id="burger_party-logo" src="public/image/get/others/logo/svg" alt="image_logo">
     <p id="description-txt">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis eligendi dolores tempora, facere aspernatur assumenda eaque, laudantium pariatur ex expedita modi enim, nulla debitis alias voluptate magnam incidunt reprehenderit! Provident.

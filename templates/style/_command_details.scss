@@ -153,7 +153,6 @@
     font-family: fonts.$Salsa;
     font-size: 6vh;
     display: flex;
-    justify-content: space-around;
     overflow: auto;
 
     position: absolute;
@@ -162,15 +161,16 @@
 
     .summary-cal
     {
-      width: 16vw;
+      width: 23vw;
       margin-left: 3vw;
       margin-top: 2vh;
     }
     .summary-price
     {
-      width: 12vw;
-      margin-left: 7vw;
+      width: 14vw;
+      margin-left: 5vw;
       margin-top: 2vh;
+      margin-right: 2vw;
     }
   }
 

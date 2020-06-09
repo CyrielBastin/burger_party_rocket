@@ -20,10 +20,12 @@
         <a href="/command/new"><div class="btn-to_return">Retour</div></a>
         <div class="summary-cal_price">
             <div class="summary-cal">
-                Calories :
+                <div class="text-cal">Calories :</div>
+                <div class="value-cal"></div>
             </div>
             <div class="summary-price">
-                Prix :
+                <div class="text-price">Prix :</div>
+                <div class="value-price"></div>
             </div>
         </div>
         <a href="/command/payed-and-accepted"><div class="btn-validate_command">Valider Commande et Payer</div></a>
