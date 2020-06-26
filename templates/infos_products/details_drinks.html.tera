@@ -6,10 +6,10 @@
 {% block body %}
     <div class="container-center grid-drink background-green">
         <img class="el bur_drk-img" src="/public/image/get/drinks/{{ drink.image }}/svg" alt="drink's image">
-        <div class="el bur_drk-name">{{ drink.name }}</div>
-        <div class="el bur_drk-desc">{{ drink.description }}</div>
-        <div class="el bur_drk-price">Prix : {{ drink.price }} €</div>
-        <div class="el bur_drk-cal">Cal. : {{ drink.calories }} KCal</div>
+        <div class="el bur_drk-name white background-green_dark">{{ drink.name }}</div>
+        <div class="el bur_drk-desc white background-green_dark">{{ drink.description }}</div>
+        <div class="el bur_drk-price white background-green_dark">Prix : {{ drink.price }} €</div>
+        <div class="el bur_drk-cal white background-green_dark">Cal. : {{ drink.calories }} KCal</div>
     </div>
     <a href="/informations-products/drinks"><div class="btn-medium normal bottom-left background-orange green_dark">Retour</div></a>
     <a href="/"><div class="btn-medium normal bottom-right background-orange green_dark">Menu Principal</div></a>

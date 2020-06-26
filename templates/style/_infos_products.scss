@@ -94,8 +94,6 @@ a
 
   .el
   {
-    color: colors.$white;
-    background-color: colors.$green_dark;
     font-family: fonts.$Salsa;
     font-size: 6vh;
     text-align: center;
@@ -111,8 +109,8 @@ a
 .bur_drk-img
 {
   display: block;
-  max-width: 25vw;
-  max-height: 33vh;
+  width: 25vw;
+  height: 33vh;
   margin: auto;
   align-self: center;
   grid-row-start: 1;
