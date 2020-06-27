@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 5vh;
+  margin: 9vh 5vh 5vh 5vh;
 
   .bur-cmd-details .bur-list
   {
@@ -119,6 +119,8 @@
   width: 100%;
   height: 1.5vh;
   background-color: colors.$white;
+  margin-top: -1vh;
+  margin-bottom: -3vh;
 }
 
 .details-footer
@@ -157,7 +159,7 @@
 
     position: absolute;
     left: 28vw;
-    top: 6vh;
+    top: 8vh;
 
     .summary-cal
     {
@@ -177,19 +179,19 @@
   .btn-validate_command
   {
     width: 26vw;
-    height: 27vh;
+    height: 23vh;
     color: colors.$green_dark;
     background-color: colors.$orange;
     font-family: fonts.$Salsa;
     font-size: 6vh;
-    line-height: 8.5vh;
+    line-height: 7.5vh;
     text-align: center;
     border-radius: 40px;
     cursor: pointer;
 
     position: absolute;
     left: 70vw;
-    top: 2vh;
+    top: 6vh;
   }
 }
 

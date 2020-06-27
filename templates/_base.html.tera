@@ -8,8 +8,10 @@
     <title>{% block title %}Super title here{% endblock title %}</title>
     <link rel="icon" type="image/png" href="/public/image/get/others/logo/png">
     <link rel="stylesheet" href="/public/css/get/main">
+    <script src="/public/js/get/_clock" defer></script>
 </head>
 <body class="{% block body_background %}background-green{% endblock body_background %}">
+<div id="clock" class="white background-green_dark">00:00:00</div>
 {% block body %}
 {% endblock body %}
 </body>

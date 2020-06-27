@@ -10,6 +10,19 @@ html
     box-sizing: inherit;
 }
 
+#clock
+{
+    display: none;
+    position: absolute;
+    top: 1vh;
+    right: 2vw;
+    font-family: fonts.$Saira;
+    font-size: 4vh;
+    width: 13vw;
+    text-align: center;
+    border-radius: 20%;
+}
+
 #burger_party
 {
     margin: 11vh auto;
