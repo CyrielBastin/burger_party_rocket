@@ -28,8 +28,23 @@
                 <div class="value-price"></div>
             </div>
         </div>
-        <a href="/command/payed-and-accepted"><div class="btn-validate_command">Valider Commande et Payer</div></a>
+        <div class="btn-validate_command">Valider Commande et Payer</div>
+    </div>
+
+    <div class="modal-payment">
+        <div class="modal-payment-content">
+            <div class="step-1">
+                <div class="step-1-text">Veuillez insérer votre carte et entrez votre code</div>
+                <div class="payment-btn-ok">OK</div>
+            </div>
+            <div class="step-2"></div>
+            <div class="step-3">
+                <img class="step-3-image" src="/public/image/get/others/payment_accepted/png" alt="paiement accepté -- image">
+                <div class="step-3-text white">Paiement accepté</div>
+            </div>
+        </div>
     </div>
 
     <script src="/public/js/get/_command_details"></script>
+    <script src="/public/js/get/_modal_payment" defer></script>
 {% endblock body %}
