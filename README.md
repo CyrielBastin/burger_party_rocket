@@ -1,11 +1,36 @@
-#Projet pour le cours "Projet SGBD"
+# Projet pour le cours "Projet SGBD"
 
 ---
 ---
 
 ## Introduction
 
+Ceci est ma version du projet ``Fastfood`` pour le cours de SGBD.  
+Je me suis concentré sur la partie ``commande`` du projet.
 
+L'idée est de simuler un terminal pour passer notre commande.  
+Comme lorsque vous allez au McDonald par exemple, au lieu de passer commande auprès du caissier, il est possible de  
+passer commande auprès d'un terminal pour ensuite récupérer notre commande lorsqu' elle est prête.
+
+
+### Fonctionnalités
+
+1. Le projet contient une partie ``Qui sommes nous`` afin de présenter l'entreprise aux clients qui souhaitent en savoir  
+plus sur notre marque.
+
+2. Une autre partie est dédiée à l'information sur nos produits. Dans cette section, les clients peuvent se renseigner  
+sur nos différents produits ainsi que leur composition de sorte qu'ills puissent choisir leur menu en fonction de  
+leurs envies et/ou allergies.
+
+3. La dernière partie concerne la commande des produits. Les clients peuvent choisir les burgers et boissons qu'ils  
+désirent ajouter à leur commande.  
+Une fois leur choix fait, les clients ont accès à un "résumé" de leur commande dans lequel ils peuvent trouver :  
+-- Un récapitulatif des produits (combien de burgers/boissons ils ont commandé).  
+-- Le nombre de calories que contient la commande.  
+-- Le prix total à payer.
+
+Une fois leur commande payée, les clients récupèrent le ticket et se dirigent au comptoir où ils attendront que leur  
+commande soit prête avant de la récupérer et de déguster les savoureux mets préparés par nos soins.
 
 ## Technologies utilisées
 * BACK-END : 
@@ -29,7 +54,7 @@
 
 ## Au cas où vous voulez build le projet
 
-Il vous faudra tout d'abord installer le language ``Rust`` sur votre machine (via rustup).  
+Il vous faudra tout d'abord installer ``Rust`` sur votre machine (via rustup).  
 Ainsi qu' ajouter tout le toolchain à la variable d'environnement ``PATH``.
 
 
@@ -64,4 +89,4 @@ Une fois le projet build, entrez la commande :
 
 ``cargo run``
 
-Cela lancera le serveur, ouvrez ensuite le navigateur web de votre choix et rendez vous à l'adresse ``127.0.0.1:8000``.
+Cela lancera le serveur, ouvrez ensuite le navigateur web de votre choix et rendez vous à l'adresse ``localhost:8000``.
