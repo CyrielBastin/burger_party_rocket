@@ -33,7 +33,7 @@ Une fois leur commande payée, les clients récupèrent le ticket et se dirigent
    
      * Framework : [Rocket](https://github.com/SergioBenitez/Rocket)
       
-     * Voir le fichier 'cargo.toml' pour les autres dépendances
+     * Voir le fichier 'Cargo.toml' pour les autres dépendances
 
         
 * FRONT-END :
@@ -58,11 +58,11 @@ Ce fichier contient la configuration pour se connecter à la base de données.
 ``database.json``
 ```json
 {
-    "ip": "ip pour la connexion (expl: \"127.0.0.1\")",
-    "user": "your_username",
-    "password": "your_password",
-    "database": "your_database",
-    "port": "port used by mysql (expl: 3308)"
+    "ip": "ip pour la connexion (expl: "127.0.0.1")",
+    "user": "votre username",
+    "password": "votre password",
+    "database": "nom de la base de données",
+    "port": "port utilisé par mysql (expl: 3308)"
 }
 ```
 
