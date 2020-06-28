@@ -78,6 +78,26 @@
     margin-bottom: 1vh;
     border-bottom: 2px solid colors.$black;
   }
+
+  .cmd-nbr-overview
+  {
+    width: 30vw;
+    margin: auto;
+    text-align: center;
+
+    .cmd-nbr-text
+    {
+      font-family: fonts.$Salsa;
+      font-size: 6vh;
+    }
+
+    .cmd-nbr-value
+    {
+      font-family: fonts.$Salsa;
+      font-size: 15vh;
+      font-weight: bold;
+    }
+  }
 }
 
 .word-goodbye

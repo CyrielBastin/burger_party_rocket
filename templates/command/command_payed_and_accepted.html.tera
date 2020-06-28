@@ -22,6 +22,11 @@
                 <div class="text-total">Total :</div>
                 <div class="items-price"></div>
             </div>
+            <div class="line-separator"></div>
+            <div class="cmd-nbr-overview">
+                <div class="cmd-nbr-text">Votre commande porte le n°</div>
+                <div class="cmd-nbr-value"></div>
+            </div>
         </div>
         <div class="word-goodbye white background-green_dark">Merci de votre visite et à bientôt</div>
     </div>
@@ -31,7 +36,6 @@
     </div>
 
     <div id="datetime" style="display: none;">{{ datetime }}</div>
-    <!-- <div id="datetime" style="display: none;">2020-06-08 23:55:20</div> -->
 
     <script src="/public/js/get/_command_payed_and_accepted"></script>
 {% endblock body %}

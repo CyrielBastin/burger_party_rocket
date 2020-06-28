@@ -228,6 +228,36 @@ fn write_new_drink_content_to_file(list_drinks: Vec<Drink>, file_path: &str) -> 
 }
 
 //==================================================================================================
+// section for handling the command number
+//==================================================================================================
+
+pub fn update_command_number() -> std::io::Result<()>
+{
+    let file_path = "public/command_details/command_number.txt";
+    let mut file = File::open(file_path)?;
+
+    let mut content = String::new();
+    file.read_to_string(&mut content)?;
+
+    let mut command_number: u32 = content.parse().unwrap();
+    command_number += 1;
+
+    let mut file = File::create(file_path)?;
+    write!(file, "{}", command_number)?;
+
+    Ok(())
+}
+
+pub fn reset_cmd_nbr() -> std::io::Result<()>
+{
+    let file_path = "public/command_details/command_number.txt";
+    let mut file = File::create(file_path)?;
+    write!(file, "0")?;
+
+    Ok(())
+}
+
+//==================================================================================================
 // Section for retrieving burgers and drinks of the command and send them to the controller
 //==================================================================================================
 
@@ -260,4 +290,15 @@ pub fn fetch_cmd_by_datetime(datetime: &str) -> Option<String>
     let cmd = dao_cmd.find_by_id(cmd_id);
 
     serde_json::to_string(&cmd).ok()
+}
+
+pub fn fetch_cmd_nbr() -> Option<String>
+{
+    let file_path = "public/command_details/command_number.txt";
+    let mut file = File::open(file_path).unwrap();
+
+    let mut file_content = String::new();
+    file.read_to_string(&mut file_content).unwrap();
+
+    Some(file_content)
 }

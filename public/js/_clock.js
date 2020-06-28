@@ -20,11 +20,14 @@ const clock_container = document.getElementById("clock");
             current_clock.minute = 0
             current_clock.hour ++
         }
-        if (current_clock.hour === 24) current_clock.hour = 0
+        if (current_clock.hour === 24) {
+            current_clock.hour = 0
+            fetch("/command/reset/command-number")
+        }
 
         clock_container.style.display = "block"
         update_numbers_format(current_clock)
-        update_UI(current_clock)
+        update_clock_UI(current_clock)
     }, 1000)
 })()
 
@@ -35,7 +38,7 @@ function update_numbers_format(current_clock)
     if (current_clock.second < 10) current_clock.second = "0" + current_clock.second
 }
 
-async function update_UI(clock)
+async function update_clock_UI(clock)
 {
     clock_container.innerText = `${clock.hour}:${clock.minute}:${clock.second}`
 }

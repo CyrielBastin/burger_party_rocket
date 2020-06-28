@@ -4,6 +4,7 @@ const div_cmd_terminal = document.querySelector(".cmd-terminal");
 const section_cmd_burgers = document.querySelector(".cmd-burgers");
 const section_cmd_drinks = document.querySelector(".cmd-drinks");
 const cmd_total_price = document.querySelector(".cmd-total .items-price");
+const cmd_number = document.querySelector(".cmd-nbr-value");
 
 
 (async function()
@@ -15,6 +16,9 @@ const cmd_total_price = document.querySelector(".cmd-total .items-price");
     add_content_to_DOM(cmd_json['burgers'], "burger").then(_ => _)
     add_content_to_DOM(cmd_json['drinks'], "drink").then(_ => _)
     compute_total_price(cmd_json).then(price => cmd_total_price.insertAdjacentText("afterbegin", `${price} €`))
+    fetch("/command/fetch/command/number")
+        .then(resp => resp.text())
+        .then(value => cmd_number.insertAdjacentText("afterbegin", value))
 })()
 
 

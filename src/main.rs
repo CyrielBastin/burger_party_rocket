@@ -39,7 +39,9 @@ fn main()
             controller::command_controller::command_payed_and_accepted,
             controller::command_controller::fetch_burgers,
             controller::command_controller::fetch_drinks,
-            controller::command_controller::fetch_command])
+            controller::command_controller::fetch_command,
+            controller::command_controller::fetch_command_number,
+            controller::command_controller::reset_command_number])
         .attach(Template::fairing())
         .launch();
 }
