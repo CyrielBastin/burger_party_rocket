@@ -26,19 +26,28 @@ const clock_container = document.getElementById("clock");
         }
 
         clock_container.style.display = "block"
-        update_numbers_format(current_clock)
-        update_clock_UI(current_clock)
+        const display_clock = update_numbers_format(current_clock)
+        update_clock_UI(display_clock)
     }, 1000)
 })()
 
 function update_numbers_format(current_clock)
 {
-    if (current_clock.hour < 10) current_clock.hour = "0" + current_clock.hour
-    if (current_clock.minute < 10) current_clock.minute = "0" + current_clock.minute
-    if (current_clock.second < 10) current_clock.second = "0" + current_clock.second
+    let clock_format = ""
+
+    if (current_clock.hour < 10) clock_format += "0"
+    clock_format += current_clock.hour; clock_format += ":"
+
+    if (current_clock.minute < 10) clock_format += "0"
+    clock_format += current_clock.minute; clock_format += ":"
+
+    if (current_clock.second < 10) clock_format += "0"
+    clock_format += current_clock.second;
+
+    return clock_format
 }
 
 async function update_clock_UI(clock)
 {
-    clock_container.innerText = `${clock.hour}:${clock.minute}:${clock.second}`
+    clock_container.innerText = clock
 }
